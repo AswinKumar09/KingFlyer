@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Flightmodel } from './model/flightmodel';
+import { FlightService } from "./services/flightService";
+import { ActivatedRoute, ParamMap, Router} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -7,28 +9,23 @@ import { Flightmodel } from './model/flightmodel';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  ngOnInit() {
-  }
-  model:Flightmodel;
-  date:string;
-
-flightlist: Flightmodel[];
-
-  constructor()
-  {
-    this.model=new Flightmodel("chennai","tirchy");
-     this.flightlist=[
-        new Flightmodel("chennai","banglore"),
-        new Flightmodel("banglore","chennai"),
-        new Flightmodel("mumbai","madurai"),
-        new Flightmodel("kolkata","pune")
-    ];
-  }
-  makedate() {
-    this.date = document.getElementById("d").nodeValue;
-  }
   
+  
+  ngOnInit() {
+      this.loadAll();
+  }
+  model : Flightmodel;
+  flightList : any;
+  
+  constructor(private service:FlightService, private router:Router) {
+  }
+
+  loadAll() {
+    this.service.getAll().subscribe((response) => {
+       this.flightList = response as any[];
+       console.log("Request returns : ", this.flightList);
+     })
+  }
 }
 
 

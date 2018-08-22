@@ -20,6 +20,7 @@ export class SearchDetailComponent implements OnInit {
  {
   let from=this.route.snapshot.paramMap.get("from");
   let to=this.route.snapshot.paramMap.get("to");
+  let dt=this.route.snapshot.paramMap.get("dt");
   //let date=this.route.snapshot.paramMap.get("date");
   console.log(`From: ${from}`);
   console.log(`To: ${to}`);
