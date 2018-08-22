@@ -21,6 +21,7 @@ import { BookingHistoryComponent } from './user/booking-history.component';
 import { UpcomingTripsComponent } from './user/upcoming-trips.component';
 import { ManageAccountComponent } from './user/manage-account.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +36,8 @@ import { ManageAccountComponent } from './user/manage-account.component';
     UserdashHeaderComponent,
     BookingHistoryComponent,
     UpcomingTripsComponent,
-    ManageAccountComponent
+    ManageAccountComponent,
+
   ],
   imports: [
     FormsModule,HttpClientModule,
