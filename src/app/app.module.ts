@@ -14,6 +14,12 @@ import { FooterComponent } from './ui/footer.component';
 import { UserdashboardComponent } from './user/userdashboard.component';
 import { SearchDetailComponent } from './search-detail.component';
 import { HomedashComponent } from './ui/homedash.component';
+import { AdminDashboardComponent } from './admin/admin-dashboard.component';
+import { EditFlightsComponent } from './admin/edit-flights.component';
+import { UserdashHeaderComponent } from './ui/userdash-header.component';
+import { BookingHistoryComponent } from './user/booking-history.component';
+import { UpcomingTripsComponent } from './user/upcoming-trips.component';
+import { ManageAccountComponent } from './user/manage-account.component';
 
 const routes: Routes = [
   {path:"home", component:HomeComponent}, 
@@ -28,7 +34,13 @@ const routes: Routes = [
     FooterComponent,
     UserdashboardComponent,
     SearchDetailComponent,
-    HomedashComponent
+    HomedashComponent,
+    AdminDashboardComponent,
+    EditFlightsComponent,
+    UserdashHeaderComponent,
+    BookingHistoryComponent,
+    UpcomingTripsComponent,
+    ManageAccountComponent
   ],
   imports: [
     FormsModule,HttpClientModule,
