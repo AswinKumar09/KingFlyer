@@ -1,0 +1,38 @@
+<style>
+    .opa {
+  
+      opacity: 0.7;
+    }
+  </style>
+  <div class="opa py-5 text-white text-center m-5" style = "background-color:orange">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12"  >
+          <h1>King Flyer</h1>
+          <p class="lead mb-4">Fly like a king</p>
+          <form class="form-inline justify-content-center">
+            <div class="input-group my-1">
+
+                
+               
+              <datalist id = "d1"> 
+                      <option *ngFor="let item of flightlist" (click)="model=item">{{item.from}}</option>
+              </datalist>
+              <input type = "text" list = "d1"  class="form-control mr-3 my-1 form-control-lg" placeholder="From"/>
+
+                
+                 <datalist id="d2">
+                    <option *ngFor="let item of flightlist" (click)="model=item">{{item.to}}</option>
+                 </datalist>
+             
+              <input type="text" list="d2"  class="form-control mr-3 my-1 form-control-lg" placeholder="To" id="inlineFormInputGroup">
+              <input type="date" class="form-control mr-3 my-1 form-control-lg" placeholder="Date" name = "date" ng-model = "date" value = "{{date | date:'dd/MM/yyyy'}}"/> </div>
+              <a class="btn btn-sm btn-info mr-4" [routerLink]="['/search', model.from, model.to]">Search </a> 
+          </form>
+        </div>
+     
+
+      </div>
+    </div>
+  </div>
+
