@@ -15,6 +15,11 @@ import { UserdashboardComponent } from './user/userdashboard.component';
 import { SearchDetailComponent } from './search-detail.component';
 import { HomedashComponent } from './ui/homedash.component';
 
+const routes: Routes = [
+  {path:"home", component:HomeComponent}, 
+  {path:"", redirectTo:"/home", pathMatch:"full"},
+  {path:"search/:from/:to/:dt",component:SearchDetailComponent}
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,6 +36,6 @@ import { HomedashComponent } from './ui/homedash.component';
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
