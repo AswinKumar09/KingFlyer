@@ -9,9 +9,10 @@ import { UsersignupComponent } from '../usersignup.component';
 
 @NgModule({
   imports: [
-    FormsModule,
+    
     CommonModule,
-    UserRoutingModule
+    UserRoutingModule,
+    FormsModule
   ],
   declarations: [UserlogginComponent, UsersignupComponent]
 })
