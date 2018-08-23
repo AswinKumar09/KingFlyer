@@ -1,4 +1,6 @@
 
+ 
+   
      <div class="panel-heading display-table" style="margin-top: 25px;margin-left: 14px">
       <div class="row display-tr" >
           <h3 class="panel-title display-td" >Payment Details</h3>
@@ -10,9 +12,10 @@
          </div>
 <div class="radio">
 
-           <label style="margin-top: 30px"><input  type="radio" name="cards" value="3" >Net Banking</label>
-
-           <div id="card3" style="display: none;"> 
+           <label style="margin-top: 30px">
+             <input  type="radio" name="cards" value="3"  (change)="updateUI('3')">Net Banking</label>
+           
+           <div id="card3" [hidden]="!isNetBanking"> 
                <!-- <div class="dropdown">
                    <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                      Select Name of The Bank
@@ -51,9 +54,9 @@
          </div>
 
        <div class="radio">
-        <label style="margin-top: 20px"><input  type="radio" name="cards" value="1" >Credit card</label>
+        <label style="margin-top: 20px"><input  type="radio" name="cards" (change)="updateUI('2')">Credit card</label>
 
-        <div id="card1" style="display: none;"> 
+        <div id="card1" [hidden]="!isCreditCard" > 
 
 
            <div class="card">
@@ -129,11 +132,11 @@
 
         </div>
         <div class="radio">
-           <label style="margin-top: 20px"><input type="radio" name="cards" value="2">Debit card</label>
+           <label style="margin-top: 20px"><input type="radio" name="cards" (change)="updateUI('1')">Debit card</label>
 
 
 
-           <div id="card2" class="panel panel-default" style="display: none;">
+           <div id="card2" class="panel panel-default" [hidden]="!isDebitCard">
                
              <div class="card">
 
