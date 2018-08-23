@@ -18,13 +18,14 @@ export class HomeComponent implements OnInit {
   flightList : any;
   
   constructor(private service:FlightService, private router:Router) {
+    this.model = new Flightmodel('','','','','','','','');
   }
 
   loadAll() {
     this.service.getAll().subscribe((response) => {
        this.flightList = response as any[];
        console.log("Request returns : ", this.flightList);
-     })
+     });
   }
 }
 

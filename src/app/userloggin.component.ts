@@ -28,13 +28,14 @@ export class UserlogginComponent implements OnInit {
   }
   login() {
     this.message = "Trying to login......";
-    this.uservice.getPass(this.model.email).subscribe((response) => {
-      this.umodel = response as any;
-  });
-this.id = this.umodel.id;
+
     this.authService.login(this.model).subscribe(() => {
       this.setMessage();
       if (this.authService.isLoggedIn) {
+        this.uservice.getPass(this.model.email).subscribe((response) => {
+          this.umodel = response as any;
+        });
+        this.id = this.umodel.id;
         console.log(this.id);
         let redirectUrl = this.authService.redirectUrl ? this.authService.redirectUrl : "/user/dash/"+this.id; 
         this.router.navigate(["/user/dash/"+this.id]);

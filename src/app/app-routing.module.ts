@@ -20,22 +20,19 @@ import { UpcomingTripsComponent } from "./user/upcoming-trips.component";
 const routes: Routes = [
   {path:"home", component:HomeComponent}, 
   {path:"", redirectTo:"/home", pathMatch:"full"},
-  {path:"search",component:SearchDetailComponent},
-  {path:"bookingticket",component:BookingTicketComponent},
+  {path:"search/:from/:to/:date",component:SearchDetailComponent},
+  {path:"signup",component:UsersignupComponent},
+  {path:"signin",component:UserlogginComponent},
   {path:"bookingreview",component:BookingReviewComponent},
   {path:"payment",component:PaymentComponent},
   {path:"signin",component:UserlogginComponent},
   {path:"signup",component:UsersignupComponent},
   {path:"adminlogin",component:AdminloginComponent},
   {path:"admindashboard",component:AdminDashboardComponent},
-  {path:"upcomingtrips",component:UpcomingTripsComponent}
-
-
 ];
 
-
 @NgModule({
-  imports: [HttpClientModule,RouterModule.forRoot(routes)],
+  imports: [HttpClientModule,FormsModule,RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
