@@ -9,13 +9,15 @@ import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 import { BookingTicketComponent } from './user/booking-ticket.component';
 import { BookingReviewComponent } from './user/booking-review.component';
+import { PaymentComponent } from './user/payment.component';
 
 const routes: Routes = [
   {path:"home", component:HomeComponent}, 
   {path:"", redirectTo:"/home", pathMatch:"full"},
   {path:"search",component:SearchDetailComponent},
   {path:"bookingticket",component:BookingTicketComponent},
-  {path:"bookingreview",component:BookingReviewComponent}
+  {path:"bookingreview",component:BookingReviewComponent},
+  {path:"payment",component:PaymentComponent}
 
 ];
 
