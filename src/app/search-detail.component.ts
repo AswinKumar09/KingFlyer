@@ -31,4 +31,10 @@ export class SearchDetailComponent implements OnInit {
   //   this.model=response;
   }
 
+  book() {
+   
+    this.router.navigate(["/bookingticket"]);
+  }
+
+
 }
