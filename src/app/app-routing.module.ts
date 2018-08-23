@@ -22,17 +22,11 @@ const routes: Routes = [
   {path:"signin",component:UserlogginComponent},
   {path:"bookingticket",component:BookingTicketComponent},
   {path:"bookingreview",component:BookingReviewComponent},
-<<<<<<< HEAD
-  {path:"payment",component:PaymentComponent}
-=======
   {path:"payment",component:PaymentComponent},
   {path:"signin",component:UserlogginComponent},
   {path:"signup",component:UsersignupComponent},
   {path:"adminlogin",component:AdminloginComponent},
-  {path:"admindashboard",component:AdminDashboardComponent}
-
-
->>>>>>> f501d23bb53c4840fa5b9f2bea338537daae2abf
+  {path:"admindashboard",component:AdminDashboardComponent},
 ];
 
 @NgModule({

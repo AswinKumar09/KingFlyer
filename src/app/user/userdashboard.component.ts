@@ -24,12 +24,7 @@ export class UserdashboardComponent implements OnInit {
   });
   }
   edit() {
-<<<<<<< HEAD
     this.router.navigate(["/user/manageaccount/"+this.umodel.id]);
-=======
-   
-    this.router.navigate(["/user/manageaccount"]);
->>>>>>> f501d23bb53c4840fa5b9f2bea338537daae2abf
   }
   logout() {
     this.authService.logout(this.model); 
