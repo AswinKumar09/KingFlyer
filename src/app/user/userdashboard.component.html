@@ -1,3 +1,40 @@
-<p>
-  userdashboard works!
-</p>
+<app-userdash-header></app-userdash-header>
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+    
+
+<form action="manage-account.component.html">
+  <div class="container">
+    <h1>My Account</h1>
+    <hr>
+
+    <label for="name"><b>Name:</b></label><br>
+    <br>
+
+    <label for="email"><b>Email:</b></label><br>
+    <br>
+
+    <label for="psw"><b>Password:</b></label><br>
+    <br>
+
+    <label for="mobile"><b>Mobile No:</b></label><br>
+    <br>
+
+
+    <label for="gender"><b>Gender</b></label><br>
+    <br>
+    <input type="radio" name="gender" value="male"> Male<br>
+    <input type="radio" name="gender" value="female"> Female<br>
+		<br>
+    <button type="submit" class="editbtn" (click)="edit()">Edit</button>
+  </div>
+</form>
+
+</body>
+</html>
