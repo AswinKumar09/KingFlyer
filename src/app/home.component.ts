@@ -3,6 +3,7 @@ import { Flightmodel } from './model/flightmodel';
 import { FlightService } from "./services/flightService";
 import { ActivatedRoute, ParamMap, Router} from "@angular/router";
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -15,9 +16,11 @@ export class HomeComponent implements OnInit {
       this.loadAll();
   }
   model : Flightmodel;
+
   flightList : any;
-  
+  d:string;
   constructor(private service:FlightService, private router:Router) {
+    this.model = new Flightmodel('','','','','','','','');
   }
 
   loadAll() {
