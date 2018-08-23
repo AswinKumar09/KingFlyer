@@ -20,6 +20,7 @@ import { UserdashHeaderComponent } from './ui/userdash-header.component';
 import { BookingHistoryComponent } from './user/booking-history.component';
 import { UpcomingTripsComponent } from './user/upcoming-trips.component';
 import { ManageAccountComponent } from './user/manage-account.component';
+import { PaymentComponent } from './user/payment.component';
 
 const routes: Routes = [
   {path:"home", component:HomeComponent}, 
@@ -41,6 +42,7 @@ const routes: Routes = [
     BookingHistoryComponent,
     UpcomingTripsComponent,
     ManageAccountComponent,
+    PaymentComponent,
 
   ],
   imports: [
