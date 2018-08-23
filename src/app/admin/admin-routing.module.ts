@@ -1,17 +1,23 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { AdminloginComponent } from '../adminlogin.component';
+import { AdminDashboardComponent } from './admin-dashboard.component';
+import { EditFlightsComponent } from './edit-flights.component';
+import { CreateflightComponent } from './createflight.component';
 import { AuthenticationGuard } from "../services/authentication.guard";
-import { AdminDashboardComponent } from "./admin-dashboard.component";
 
-const routes: Routes = [
-  {
+const routes: Routes = [{
   path: "admin",
-    canActivate:[AuthenticationGuard],
-    children: [
-      { path: "", component: AdminDashboardComponent}
-    ]
-  }
-];
+  canActivate:[AuthenticationGuard],
+  children: [
+  {path:"adminsignup",component:AdminloginComponent},
+  {path:"admindashboard",component:AdminDashboardComponent},
+  {path:"editflight/:id",component:EditFlightsComponent},
+  {path:"create/new",component:CreateflightComponent}]
+}]
+
+
+
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
