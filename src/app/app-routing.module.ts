@@ -10,6 +10,9 @@ import { HttpClientModule } from "@angular/common/http";
 import { BookingTicketComponent } from './user/booking-ticket.component';
 import { BookingReviewComponent } from './user/booking-review.component';
 import { PaymentComponent } from './user/payment.component';
+import { AdminloginComponent } from "./adminlogin.component";
+import { AdminDashboardComponent } from './admin/admin-dashboard.component';
+
 
 const routes: Routes = [
   {path:"home", component:HomeComponent}, 
@@ -18,8 +21,11 @@ const routes: Routes = [
   {path:"bookingticket",component:BookingTicketComponent},
   {path:"bookingreview",component:BookingReviewComponent},
   {path:"payment",component:PaymentComponent},
-  {path:"signin", component:UserlogginComponent}, 
-  {path:"signup", component:UsersignupComponent},
+  {path:"signin",component:UserlogginComponent},
+  {path:"signup",component:UsersignupComponent},
+  {path:"adminlogin",component:AdminloginComponent},
+  {path:"admindashboard",component:AdminDashboardComponent}
+
 
 ];
 

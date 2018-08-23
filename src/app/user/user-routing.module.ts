@@ -10,8 +10,7 @@ const routes: Routes = [{
   path: "user",
     canActivate:[AuthenticationGuard],
     children: [
-  {path:"signin", component:UserlogginComponent}, 
-  {path:"signup", component:UsersignupComponent}, 
+   
   {path:"dash/:id", component:UserdashboardComponent},
   {path:"manageaccount", component:ManageAccountComponent}]}
 ];

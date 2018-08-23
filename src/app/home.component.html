@@ -5,7 +5,7 @@
       opacity: 0.7;
     }
   </style>
-  <div class="opa py-5 text-white text-center m-5" style = "background-color:orange">
+  <div class="opa py-5 text-white text-center m-5" style = "background-color:darkorange">
     <div class="container">
       <div class="row">
         <div class="col-md-12"  >
@@ -15,7 +15,7 @@
             <div class="input-group my-1">
                
               <datalist id = "d1" > 
-                      <option *ngFor="let item of flightList" (click)="model=item">{{item.source}}</option>
+                      <option  *ngFor="let item of flightList" (click)="model=item">{{item.source}}</option>
               </datalist>
               <input type = "text" list = "d1" name="source"  class="form-control mr-3 my-1 form-control-lg" placeholder="From" [(ngModel)] ="model.source"/>
 
