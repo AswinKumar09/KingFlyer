@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -18,6 +19,7 @@
               <form action="https://formspree.io/YOUREMAILHERE">
                 <div class="form-group">
                   <label>Email address</label>
+<<<<<<< HEAD:src/app/user/userloggin.component.html
                   <input type="email" class="form-control form-control-lg w-25" placeholder="Enter email" required="required"> </div>
                 <div class="form-group">
                   <label>Password</label>
@@ -25,6 +27,16 @@
               
                 <button type="submit" class="btn btn-success btn-lg">Login</button><br>
                 <button class="btn btn-success btn-lg" routerLink="/Signup" > Signup</button>
+=======
+                  <input type="email" name="email" [(ngModel)]="model.email" class="form-control" placeholder="Enter email"> </div>
+                <div class="form-group">
+                  <label>Password</label>
+                  <input type="password" name="password" [(ngModel)]="model.password" class="form-control" placeholder="Password"> </div>
+                <button type="submit" class="btn btn-secondary  btn-space" (click)="login()">Login</button>
+                <a class="btn btn-secondary" [routerLink]="['/signup']" >Create Account </a>
+                <!-- <a [routerLink]="['/']">Forget password</a> -->
+
+>>>>>>> bc8355a135161ea7747d4ec81c1a9228192aa068:src/app/userloggin.component.html
               </form>
             </div>
           </div>
