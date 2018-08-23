@@ -25,7 +25,7 @@ export class UserdashboardComponent implements OnInit {
   }
   edit() {
    
-    this.router.navigate(["/manageaccount"]);
+    this.router.navigate(["/user/manageaccount"]);
   }
   logout() {
     this.authService.logout(this.model); 

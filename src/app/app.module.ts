@@ -23,6 +23,7 @@ import { ManageAccountComponent } from './user/manage-account.component';
 import { BookingTicketComponent } from './user/booking-ticket.component';
 import { BookingReviewComponent } from './user/booking-review.component';
 import { PaymentComponent } from './user/payment.component';
+import { AdminloginComponent } from './adminlogin.component';
 
 const routes: Routes = [
   {path:"home", component:HomeComponent}, 
@@ -46,7 +47,8 @@ const routes: Routes = [
     ManageAccountComponent,
     BookingTicketComponent,
     BookingReviewComponent,
-    PaymentComponent
+    PaymentComponent,
+    AdminloginComponent
   ],
   imports: [
     FormsModule,HttpClientModule,
