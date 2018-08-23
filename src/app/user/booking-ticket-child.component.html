@@ -1,0 +1,28 @@
+
+
+<div class="card">
+    <div class="card-header card-title">Passenger Details</div>
+    <div class="card-body">
+    <form>
+      <div class="form-group row">
+        <label class="col-form-label">Passenger Name :</label>
+        <input type="text" placeholder="Enter Passenger Name" name="name" id="name" class="form-control" [(ngModel)]="model.name"/>
+      </div>
+      <div class="form-group row">
+        <label class="col-form-label">Age :</label>
+        <input type="text" name="age" id="age"
+          class="form-control" [(ngModel)]="model.age"/>
+      </div>
+      Gender
+                    <div class="form-group row">
+                      <label><input type="radio" name="gender" [(ngModel)]="model.gender" value="Male">Male</label>
+                    </div>
+                    <div class="form-group row">
+                      <label><input type="radio" name="gender" [(ngModel)]="model.gender" value = "Female">Female</label>
+                    </div>
+      
+      <button type="button" class="btn btn-outline-primary mr-2" (click)="saveData()">
+        Save
+      </button>
+  </form>
+  </div>  

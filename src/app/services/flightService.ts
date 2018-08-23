@@ -19,8 +19,8 @@ export class FlightService {
     return this.http.get(url);
     //return this.productList;
   }
-  getDetails(id: number) {
-    let url = this.flightUrl + "/getFlightById" + id;
+  getDetails(id: string) {
+    let url = this.flightUrl + "/getFlightById/" + id;
     return this.http.get<Flightmodel>(url);
     // let item = this.productList.find((c)=>c.productId==id);
     // return item;
