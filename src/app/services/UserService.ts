@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http"
 import { Observable } from "rxjs";
 import { Usermodel } from "../model/userModel"    
+import { Password } from "../model/password";
 
 
 @Injectable({
@@ -19,7 +20,7 @@ export class UserService {
     return this.http.get(url);
     //return this.productList;
   }
-  getDetails(id: number) {
+  getDetails(id: string) {
     let url = this.userUrl + "/getUserById/" + id;
     return this.http.get<Usermodel>(url);
     // let item = this.productList.find((c)=>c.productId==id);
@@ -48,6 +49,10 @@ export class UserService {
       })
     }
     return this.http.post(url, body, httpOptions); 
+  }
+  getPass(email:string) {
+    let url = this.userUrl + "/getPassword/" + email;
+    return this.http.get<Password>(url);
   }
   remove(id: number) {
     let url = this.userUrl + "/deleteUserById/" + id;
