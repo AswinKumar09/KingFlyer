@@ -21,7 +21,11 @@ import { BookingHistoryComponent } from './user/booking-history.component';
 import { UpcomingTripsComponent } from './user/upcoming-trips.component';
 import { ManageAccountComponent } from './user/manage-account.component';
 
-
+const routes: Routes = [
+  {path:"home", component:HomeComponent}, 
+  {path:"", redirectTo:"/home", pathMatch:"full"},
+  {path:"search/:from/:to/:dt",component:SearchDetailComponent}
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +49,6 @@ import { ManageAccountComponent } from './user/manage-account.component';
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
