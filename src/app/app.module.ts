@@ -46,14 +46,9 @@ import { AdminloginComponent } from './adminlogin.component';
     AdminloginComponent
   ],
   imports: [
-<<<<<<< HEAD
-    BrowserModule, FormsModule,HttpClientModule,
-    UserModule,AdminModule,
-=======
     BrowserModule,
     FormsModule,HttpClientModule,
      UserModule,AdminModule,
->>>>>>> 96311388c08782ead14cf44ba9481963f01ec21e
     AppRoutingModule
   ],
   providers: [],
