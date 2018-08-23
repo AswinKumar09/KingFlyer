@@ -18,6 +18,7 @@ export class HomeComponent implements OnInit {
   flightList : any;
   
   constructor(private service:FlightService, private router:Router) {
+    this.model = new Flightmodel('','','','','','','','');
   }
 
   loadAll() {

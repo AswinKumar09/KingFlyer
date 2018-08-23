@@ -14,16 +14,16 @@ import { PaymentComponent } from './user/payment.component';
 const routes: Routes = [
   {path:"home", component:HomeComponent}, 
   {path:"", redirectTo:"/home", pathMatch:"full"},
-  {path:"search",component:SearchDetailComponent},
+  {path:"search/:from/:to/:date",component:SearchDetailComponent},
+  {path:"signup",component:UsersignupComponent},
+  {path:"signin",component:UserlogginComponent},
   {path:"bookingticket",component:BookingTicketComponent},
   {path:"bookingreview",component:BookingReviewComponent},
   {path:"payment",component:PaymentComponent}
-
 ];
 
-
 @NgModule({
-  imports: [HttpClientModule,RouterModule.forRoot(routes)],
+  imports: [HttpClientModule,FormsModule,RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

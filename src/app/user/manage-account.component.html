@@ -5,32 +5,40 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 </head>
-<body>
 
-<form action="/">
+<body>
+    
+
+<form action="manage-account.component.html">
   <div class="container">
-    <h1>Manage your account</h1>
+    <h1>Manage My Account</h1>
     <hr>
 
-    <label for="name"><b>Name:</b></label>
-    <input type="text" name="name"><br>
-
-    <label for="email"><b>Email:</b></label>
-    <input type="text" name="email"><br>
-
-    <label for="psw"><b>Password:</b></label>
-    <input type="password" name="psw" ><br>
-
-    <label for="mobile"><b>Mobile No"</b></label>
-    <input type="text" name="mobile"><br>
-
-    <label for="gender"><b>Gender:</b></label><br>
+    <label for="name"><b>Name:</b></label><br>
+    <input type = "text" name = "name" id = "name"
+        class = "form-control" [(ngModel)]="umodel.name"/>
     <br>
-    <input type="radio" name="gender" value="male"> Male<br>
-    <input type="radio" name="gender" value="female"> Female<br>
-		<br>
-    <button type="submit" class="updatebtn">Update</button>
+
+    <label for="email"><b>Email:</b></label><br>
+    <input type = "text" name = "email" id = "email"
+        class = "form-control" [(ngModel)]="umodel.email"/>
+    <br>
+
+  
+
+    <label for="mobile"><b>Mobile No:</b></label><br>
+    <input type = "text" name = "phone" id = "phone"
+        class = "form-control" [(ngModel)]="umodel.phoneNo"/>
+    <br>
+
+
+    <label for="gender"><b>Gender</b></label><br>
+    <input type = "text" name = "gender" id = "gender"
+        class = "form-control" [(ngModel)]="umodel.gender"/>
+    <br>
+    <button type="submit" class="editbtn" (click)="submit()">Update</button>
   </div>
+  
 </form>
 
 </body>

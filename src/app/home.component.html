@@ -14,20 +14,20 @@
           <form class="form-inline justify-content-center">
             <div class="input-group my-1">
                
-              <datalist id = "d1"> 
+              <datalist id = "d1" > 
                       <option *ngFor="let item of flightList" (click)="model=item">{{item.source}}</option>
               </datalist>
-              <input type = "text" list = "d1"  class="form-control mr-3 my-1 form-control-lg" placeholder="From"/>
+              <input type = "text" list = "d1" name="source"  class="form-control mr-3 my-1 form-control-lg" placeholder="From" [(ngModel)] ="model.source"/>
 
                 
                  <datalist id="d2">
                     <option *ngFor="let item of flightList" (click)="model=item">{{item.destination}}</option>
                  </datalist>
              
-              <input type="text" list="d2"  class="form-control mr-3 my-1 form-control-lg" placeholder="To"> 
-              <input type="date" class="form-control mr-3 my-1 form-control-lg" placeholder="Date" name = "d" ng-model="d" value = "{{d | date:'dd/MM/yyyy'}}"/>
+              <input type="text" list="d2"  name="destination" class="form-control mr-3 my-1 form-control-lg" placeholder="To" [(ngModel)] ="model.destination"> 
+              <input type="date" class="form-control mr-3 my-1 form-control-lg" placeholder="Date" name = "d" value = "{{d | date:'dd/MM/yyyy'}}" [(ngModel)]="model.date"/>
             </div> 
-              <a class="btn btn-sm btn-info mr-4" [routerLink]="['/search']">Search </a> 
+              <a class="btn btn-sm btn-info mr-4" [routerLink]="['/search', model.source, model.destination,model.date]">Search </a> 
           </form>
         </div>
       </div>

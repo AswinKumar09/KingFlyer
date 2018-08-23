@@ -8,6 +8,7 @@ export class Flightmodel {
     arrival:string;
     flightCatg:string;
     availDays:string[];
+    date:string;
 
    constructor(flightNo, flightName, source, destination, departure, arrival, flightCatg, availDays)
    {

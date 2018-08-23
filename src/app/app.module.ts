@@ -24,11 +24,6 @@ import { BookingTicketComponent } from './user/booking-ticket.component';
 import { BookingReviewComponent } from './user/booking-review.component';
 import { PaymentComponent } from './user/payment.component';
 
-const routes: Routes = [
-  {path:"home", component:HomeComponent}, 
-  {path:"", redirectTo:"/home", pathMatch:"full"},
-  {path:"search/:from/:to/:dt",component:SearchDetailComponent}
-];
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,8 +44,9 @@ const routes: Routes = [
   PaymentComponent
   ],
   imports: [
+    BrowserModule,
     FormsModule,HttpClientModule,
-    BrowserModule, UserModule,AdminModule,
+     UserModule,AdminModule,
     AppRoutingModule
   ],
   providers: [],

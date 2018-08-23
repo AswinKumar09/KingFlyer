@@ -49,6 +49,10 @@ export class FlightService {
     }
     return this.http.post(url, body, httpOptions); 
   }
+  search(from:string,to:string,date:string) {
+    let url = this.flightUrl + "/search/" + from + "/" + to + "/" + date;
+    return this.http.get(url);
+  }
   remove(id: number) {
     let url = this.flightUrl + "/deleteFlightById/" + id;
     return this.http.delete(url);

@@ -18,19 +18,19 @@ export class AuthenticationService {
   constructor(private service:UserService) { 
     this.model = new LoginModel("", "");
   }
-  login(item: LoginModel) : Observable<boolean> {
+  login(item: LoginModel) {
     this.model = item;
     let pass : string; 
     this.service.getPass(this.model.email).subscribe((response) => {
         this.userModel = response as any;
+        
         console.log("Request returns : ", this.userModel.password);
     });
     if(this.userModel.password == this.model.password){
-            return of(true).pipe(
-            tap(val => this.isLoggedIn = true)
-        );
+        this.isLoggedIn = true;
+        return of(true);
     }
-    else return of(false);
+    return of(false);
   }
   logout(item: LoginModel): void {
     this.model = new LoginModel("", ""); 
