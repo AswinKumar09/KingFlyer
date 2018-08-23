@@ -20,7 +20,12 @@ import { UserdashHeaderComponent } from './ui/userdash-header.component';
 import { BookingHistoryComponent } from './user/booking-history.component';
 import { UpcomingTripsComponent } from './user/upcoming-trips.component';
 import { ManageAccountComponent } from './user/manage-account.component';
+<<<<<<< HEAD
 import { PaymentComponent } from './user/payment.component';
+=======
+import { BookingTicketComponent } from './user/booking-ticket.component';
+import { BookingReviewComponent } from './user/booking-review.component';
+>>>>>>> 22f2a09114490c107025f128c15872a14245637f
 
 const routes: Routes = [
   {path:"home", component:HomeComponent}, 
@@ -42,8 +47,13 @@ const routes: Routes = [
     BookingHistoryComponent,
     UpcomingTripsComponent,
     ManageAccountComponent,
+<<<<<<< HEAD
     PaymentComponent,
 
+=======
+    BookingTicketComponent,
+    BookingReviewComponent
+>>>>>>> 22f2a09114490c107025f128c15872a14245637f
   ],
   imports: [
     FormsModule,HttpClientModule,
