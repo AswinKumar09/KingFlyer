@@ -1,3 +1,54 @@
-<p>
-  upcoming-trips works!
-</p>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
+  <script type="text/javascript">
+  var app = angular.module('MyApp', []);
+  app.controller('MyController', function ($scope) {
+          $scope.Customers = [
+              {"From":"bangalore","To":"chennai","Date":"20/08/2018","No_OF_Passengers":"9"},
+              {"From":"delhi","To":"chennai","Date":"20/08/2018","No_OF_Passengers":"9"},
+              {"From":"hyd","To":"chennai","Date":"20/08/2018","No_OF_Passengers":"9"},
+
+          ];
+          $scope.Remove = function (index) {
+              
+                var name = $scope.Customers[index].Name;
+                $scope.Customers.splice(index, 1);
+              }
+          }
+      );
+          
+      
+  </script>
+
+
+   
+
+<div>
+  <h1>Upcoming Trips</h1>
+  
+  <div ng-app="MyApp" ng-controller="MyController">
+                  
+      <table class="table table-hover"  >
+        <thead>
+          <tr>
+            <th>From</th>
+            <th>To</th>
+            <th>Date</th>
+            <th>No_OF_Passengers</th>
+          </tr>
+        </thead>
+         <tbody >
+                  <tr ng-repeat="m in Customers">
+                      <td>{{m.From}}</td>
+                      <td>{{m.To}}</td>
+                      <td>{{m.Date}}</td>
+                      <td>{{m.No_OF_Passengers}}</td>
+                      <td><input type="button" ng-click="Remove($index)" value="Cancel" /></td>
+                  </tr>
+              </tbody>
+        
+      </table>
+    </div>
+    
+  
+</div>

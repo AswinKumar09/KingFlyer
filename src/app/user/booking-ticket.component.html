@@ -1,4 +1,68 @@
-<p>
-  booking-ticket works!
-</p>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
+    <script type="text/javascript">
+        var app = angular.module('MyApp', [])
+        app.controller('MyController', function ($scope, $window) {
+            $scope.Customers = [];
+ 
+            $scope.Add = function () {
+                //Add the new item to the Array.
+                var customer = {};
+                customer.Name = $scope.Name;
+                customer.Age = $scope.Age;
+                customer.Gender=$scope.Gender;
+                $scope.Customers.push(customer);
+ 
+                //Clear the TextBoxes.
+                $scope.Name = "";
+                $scope.Country = "";
+                $scope.Gender ="";
+            };
+ 
+            $scope.Remove = function (index) {
+                //Find the record using Index from Array.
+                var name = $scope.Customers[index].Name;
+               // if ($window.confirm("Do you want to delete: " + name)) {
+                    //Remove the item from Array using Index.
+                    $scope.Customers.splice(index, 1);
+                }
+            }
+        );
+    </script>
+    <div class="container">
+      <p>Enter the passengers details</p>
+        <div class="row clearfix">
+        <div class="col-md-12 column">
+    <div ng-app="MyApp" ng-controller="MyController">
+      
+        <table cellpadding="0" cellspacing="0" class= "table table-bordered table-hover">
+            <tr>
+                <th class="text-center">Name</th>
+                <th class="text-center">Age</th>
+                <th class="text-center">Gender</th>
+                <th></th>
+            </tr>
+            <tbody ng-repeat="m in Customers">
+                <tr>
+                    <td>{{m.Name}}</td>
+                    <td>{{m.Age}}</td>
+                    <td>{{m.Gender}}</td>
+                    <td><input type="button" ng-click="Remove($index)" value="Remove" /></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td><input type="text" ng-model="Name" /></td>
+                    <td><input type="text" ng-model="Age" /></td>
+                    <td><select name='gender'><option value='M'>Male</option><option value='F'>Female</option></select></td>
+                    <td><input type="button" ng-click="Add()" value="AddPassengers" /></td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+</div>
+</div>
+</div>
 <button type="submit" (click)="review()">Booking Review</button>
+

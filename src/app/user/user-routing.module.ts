@@ -5,6 +5,7 @@ import { UsersignupComponent } from '../usersignup.component';
 import { UserdashboardComponent } from "./userdashboard.component";
 import { ManageAccountComponent } from "./manage-account.component";
 import { AuthenticationGuard } from "../services/authentication.guard";
+import { UpcomingTripsComponent } from "./upcoming-trips.component";
 
 const routes: Routes = [{
   path: "user",
@@ -13,7 +14,9 @@ const routes: Routes = [{
   {path:"signin", component:UserlogginComponent}, 
   {path:"signup", component:UsersignupComponent}, 
   {path:"dash/:id", component:UserdashboardComponent},
-  {path:"manageaccount", component:ManageAccountComponent}]}
+  {path:"manageaccount", component:ManageAccountComponent},
+  {path:"upcomingtrips", component:UpcomingTripsComponent}
+]}
 ];
 
 @NgModule({
