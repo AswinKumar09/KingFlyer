@@ -26,5 +26,8 @@ export class UserlogginComponent implements OnInit {
    
     this.router.navigate(["/userdashboard"]);
   }
+  // diagnostic(){
+  //   console.log(this.model.userName, this.model.password);
+  // } 
 
 }
