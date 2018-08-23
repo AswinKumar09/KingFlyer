@@ -13,21 +13,21 @@ export class FlightService {
   constructor(private http: HttpClient) { 
     //this.productList = products;
   }
-  flightUrl: string = "http://localhost:2018/api/flights";
+  flightUrl: string = "http://localhost:2020/FlightBackendService";
   getAll() {
-    let url = this.flightUrl ;
+    let url = this.flightUrl + "/getAllFlights";
     return this.http.get(url);
     //return this.productList;
   }
   getDetails(id: number) {
-    let url = this.flightUrl + "/" + id;
+    let url = this.flightUrl + "/getFlightById" + id;
     return this.http.get<Flightmodel>(url);
     // let item = this.productList.find((c)=>c.productId==id);
     // return item;
   }
   create(item: Flightmodel) {
     //this.productList.push(item);
-    let url = this.flightUrl;
+    let url = this.flightUrl + "/addFlight" ;
     let body = JSON.stringify(item);
     let httpOptions = 
     {
@@ -39,7 +39,7 @@ export class FlightService {
   }
   update(item: Flightmodel) {
     //this.productList.push(item);
-    let url = this.flightUrl;
+    let url = this.flightUrl + "/addFlight"; 
     let body = JSON.stringify(item);
     let httpOptions = 
     {
@@ -54,7 +54,7 @@ export class FlightService {
     return this.http.get(url);
   }
   remove(id: number) {
-    let url = this.flightUrl + "/" + id;
+    let url = this.flightUrl + "/deleteFlightById" + id;
     return this.http.delete(url);
   }
 }

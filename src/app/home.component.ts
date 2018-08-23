@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
     this.service.getAll().subscribe((response) => {
        this.flightList = response as any[];
        console.log("Request returns : ", this.flightList);
-     })
+     });
   }
 }
 

@@ -20,7 +20,6 @@ const routes: Routes = [
   {path:"search/:from/:to/:date",component:SearchDetailComponent},
   {path:"signup",component:UsersignupComponent},
   {path:"signin",component:UserlogginComponent},
-  {path:"bookingticket",component:BookingTicketComponent},
   {path:"bookingreview",component:BookingReviewComponent},
   {path:"payment",component:PaymentComponent},
   {path:"signin",component:UserlogginComponent},

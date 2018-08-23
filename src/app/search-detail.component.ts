@@ -39,7 +39,7 @@ export class SearchDetailComponent implements OnInit {
 
   book() {
    
-    this.router.navigate(["/bookingticket"]);
+    this.router.navigate(["/user/bookingticket"]);
   }
 
 

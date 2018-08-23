@@ -28,7 +28,6 @@ export class UserlogginComponent implements OnInit {
   }
   login() {
     this.message = "Trying to login......";
-    
 
     this.authService.login(this.model).subscribe(() => {
       this.setMessage();
