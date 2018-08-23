@@ -1,14 +1,8 @@
-<!DOCTYPE html>
 <html>
-
 <head>
+    
   <link rel="stylesheet" href="/project/src/app/signup.component.css" type="text/css">
-  <style>
-  .btn-space {
-    margin-right: 10px;
-}
-  
-  </style>
+ 
 </head>
 
 <body >
@@ -20,13 +14,58 @@
           <div class="card text-white p-5 bg-primary">
             <div class="card-body">
               <h1 class="mb-4">User Login </h1>
-              <form>
-                <div class="form-group">
+              <form >
+               
+                  <div class="form-group"
+                  [ngClass]="{
+                   'has-danger': email.invalid && (email.dirty || email.touched),
+                   'has-success': email.valid && (email.dirty || email.touched)
+              }">
+               <label>Email</label>
+               <input type="email"
+                      class="form-control"
+                      formControlName="email"
+                      required>
+               <div class="form-control-feedback"
+                    *ngIf="email.errors && (email.dirty || email.touched)">
+                 <p *ngIf="email.errors.required">Email is required</p>
+                 <p *ngIf="password.errors.pattern">The email address must contain at least the @ character</p>
+               </div>
+               </div>
+           
+               
+               
+               
+               
+               
+               
+               <!-- <div class="form-group">
                   <label>Email address</label>
-                  <input type="email" class="form-control" placeholder="Enter email"> </div>
-                <div class="form-group">
+                  <input type="email" class="form-control" placeholder="Enter email" ></div>-->
+                 
+                  <div class="form-group"
+       [ngClass]="{
+        'has-danger': password.invalid && (password.dirty || password.touched),
+        'has-success': password.valid && (password.dirty || password.touched)
+   }">
+    <label>Password</label>
+    <input type="password"
+           class="form-control"
+           formControlName="password"
+           required>
+    <div class="form-control-feedback"
+         *ngIf="password.errors && (password.dirty || password.touched)">
+      <p *ngIf="password.errors.required">Password is required</p>
+      <p *ngIf="password.errors.minlength">Password must be 8 characters long, we need another {{password.errors.minlength.requiredLength - password.errors.minlength.actualLength}} characters </p>
+    </div>
+  </div>
+                
+                <!--<div class="form-group">
                   <label>Password</label>
-                  <input type="password" class="form-control" placeholder="Password"> </div>
+                  <input type="password" class="form-control" fotmControlName="password" placeholder="Password">
+                  <div class="form-control-feedback"  *ngIf="password.invalid && password.dirty">Password is wrong</div>
+
+                 </div>-->
                 <button type="submit" class="btn btn-secondary  btn-space">Login</button>
                 <a class="btn btn-secondary" [routerLink]="['/signup']" >Create Account </a>
                 <!-- <a [routerLink]="['/']">Forget password</a> -->
