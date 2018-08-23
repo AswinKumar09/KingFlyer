@@ -52,7 +52,7 @@ export class UserService {
   }
   getPass(email:string) {
     let url = this.userUrl + "/getPassword/" + email;
-    return this.http.get<Password>(url);
+    return this.http.get<Usermodel>(url);
   }
   remove(id: number) {
     let url = this.userUrl + "/deleteUserById/" + id;

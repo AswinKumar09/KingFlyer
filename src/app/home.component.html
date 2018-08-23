@@ -14,8 +14,16 @@
           <form class="form-inline justify-content-center">
             <div class="input-group my-1">
                
+<<<<<<< HEAD
               <datalist id = "d1" > 
                       <option  *ngFor="let item of flightList" (click)="model=item">{{item.source}}</option>
+=======
+              <select *ngFor = "let i of list">
+                <option>{{i}}</option>
+              </select>
+              <datalist id = "d1" > 
+                      <option *ngFor="let item of flightList" (click)="model=item">{{item.source}}</option>
+>>>>>>> 96311388c08782ead14cf44ba9481963f01ec21e
               </datalist>
               <input type = "text" list = "d1" name="source"  class="form-control mr-3 my-1 form-control-lg" placeholder="From" [(ngModel)] ="model.source"/>
 

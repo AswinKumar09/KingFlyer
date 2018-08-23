@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
 import { ActivatedRoute, ParamMap } from "@angular/router";
 import { Flightmodel } from './model/flightmodel';
+import { FlightService } from "./services/flightService";
 
 @Component({
   selector: 'app-search-detail',
@@ -10,9 +11,9 @@ import { Flightmodel } from './model/flightmodel';
 })
 export class SearchDetailComponent implements OnInit {
 
-  model: Flightmodel;
+  models: Flightmodel[];
 
-  constructor(private router:Router,private route: ActivatedRoute,) {
+  constructor(private router:Router,private route: ActivatedRoute,private service:FlightService) {
    }
 
 
@@ -20,12 +21,17 @@ export class SearchDetailComponent implements OnInit {
  {
   let from=this.route.snapshot.paramMap.get("from");
   let to=this.route.snapshot.paramMap.get("to");
-  let dt=this.route.snapshot.paramMap.get("dt");
+  let dt=this.route.snapshot.paramMap.get("date");
+
+  this.service.search(from, to, dt).subscribe((response) => {
+    this.models = response as any[];
+    console.log("Request returns : ", this.models);
+  })
   //let date=this.route.snapshot.paramMap.get("date");
   console.log(`From: ${from}`);
   console.log(`To: ${to}`);
  // console.log(`Date: ${date}`);
-
+  
   //this.model=this.service.getDetails(parseInt(id));
   // this.service.getDetails(from).subscribe((response) =>{
   //   this.model=response;
@@ -33,7 +39,7 @@ export class SearchDetailComponent implements OnInit {
 
   book() {
    
-    this.router.navigate(["/bookingticket"]);
+    this.router.navigate(["/user/bookingticket"]);
   }
 
 
