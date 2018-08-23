@@ -14,6 +14,7 @@
           <div class="card text-white p-5 bg-primary">
             <div class="card-body">
               <h1 class="mb-4">User Login </h1>
+<<<<<<< HEAD
               <form >
                
                   <div class="form-group"
@@ -40,6 +41,10 @@
                
                
                <!-- <div class="form-group">
+=======
+              <form action="userdashboard.component.html">
+                <div class="form-group">
+>>>>>>> 6b90152510dee2e9cc7a68bcded726596a52f588
                   <label>Email address</label>
                   <input type="email" class="form-control" placeholder="Enter email" ></div>-->
                  
@@ -62,11 +67,16 @@
                 
                 <!--<div class="form-group">
                   <label>Password</label>
+<<<<<<< HEAD
                   <input type="password" class="form-control" fotmControlName="password" placeholder="Password">
                   <div class="form-control-feedback"  *ngIf="password.invalid && password.dirty">Password is wrong</div>
 
                  </div>-->
                 <button type="submit" class="btn btn-secondary  btn-space">Login</button>
+=======
+                  <input type="password" class="form-control" placeholder="Password"> </div>
+                <button type="submit" class="btn btn-secondary  btn-space" (click)="login()">Login</button>
+>>>>>>> 6b90152510dee2e9cc7a68bcded726596a52f588
                 <a class="btn btn-secondary" [routerLink]="['/signup']" >Create Account </a>
                 <!-- <a [routerLink]="['/']">Forget password</a> -->
 

@@ -9,7 +9,6 @@ import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 
 const routes: Routes = [
-
   {path:"home", component:HomeComponent}, 
   {path:"", redirectTo:"/home", pathMatch:"full"},
   {path:"search/:from/:to/:dt",component:SearchDetailComponent}
@@ -17,7 +16,7 @@ const routes: Routes = [
 
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [HttpClientModule,RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+<<<<<<< HEAD
 import {
   ReactiveFormsModule,
   FormsModule,
@@ -7,6 +8,9 @@ import {
   Validators,
   FormBuilder
 } from '@angular/forms';
+=======
+import { Router } from '@angular/router';
+>>>>>>> 6b90152510dee2e9cc7a68bcded726596a52f588
 
 @Component({
   selector: 'app-userloggin',
@@ -15,9 +19,13 @@ import {
 })
 export class UserlogginComponent implements OnInit {
 
-  constructor() { }
+  constructor(public router:Router) { }
 
   ngOnInit() {
+  }
+  login() {
+   
+    this.router.navigate(["/userdashboard"]);
   }
 
 }
