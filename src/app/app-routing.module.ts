@@ -11,6 +11,7 @@ import { BookingTicketComponent } from './user/booking-ticket.component';
 import { BookingReviewComponent } from './user/booking-review.component';
 import { PaymentComponent } from './user/payment.component';
 import { AdminloginComponent } from "./adminlogin.component";
+import { AdminDashboardComponent } from './admin/admin-dashboard.component';
 
 
 const routes: Routes = [
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path:"payment",component:PaymentComponent},
   {path:"signin",component:UserlogginComponent},
   {path:"signup",component:UsersignupComponent},
-  {path:"adminlogin",component:AdminloginComponent}
+  {path:"adminlogin",component:AdminloginComponent},
+  {path:"admindashboard",component:AdminDashboardComponent}
 
 
 ];
