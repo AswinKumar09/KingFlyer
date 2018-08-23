@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home.component';
 import { UserModule } from './user/user.module';
-import {AdminModule} from './admin/admin.module';
+import { AdminModule} from './admin/admin.module';
 import { HeaderComponent } from './ui/header.component';
 import { FooterComponent } from './ui/footer.component';
 import { UserdashboardComponent } from './user/userdashboard.component';
@@ -23,6 +23,7 @@ import { ManageAccountComponent } from './user/manage-account.component';
 import { BookingTicketComponent } from './user/booking-ticket.component';
 import { BookingReviewComponent } from './user/booking-review.component';
 import { PaymentComponent } from './user/payment.component';
+import { AdminloginComponent } from './adminlogin.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { PaymentComponent } from './user/payment.component';
     ManageAccountComponent,
     BookingTicketComponent,
     BookingReviewComponent,
-  PaymentComponent
+    PaymentComponent,
+    AdminloginComponent
   ],
   imports: [
     BrowserModule,

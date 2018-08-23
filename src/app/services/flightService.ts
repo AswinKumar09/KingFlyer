@@ -13,21 +13,21 @@ export class FlightService {
   constructor(private http: HttpClient) { 
     //this.productList = products;
   }
-  flightUrl: string = "http://localhost:2020/FlightBackendService"
+  flightUrl: string = "http://localhost:2018/api/flights";
   getAll() {
-    let url = this.flightUrl + "/getAllFlights";
+    let url = this.flightUrl ;
     return this.http.get(url);
     //return this.productList;
   }
   getDetails(id: number) {
-    let url = this.flightUrl + "/getFlightById/" + id;
+    let url = this.flightUrl + "/" + id;
     return this.http.get<Flightmodel>(url);
     // let item = this.productList.find((c)=>c.productId==id);
     // return item;
   }
   create(item: Flightmodel) {
     //this.productList.push(item);
-    let url = this.flightUrl+"/addFlight";
+    let url = this.flightUrl;
     let body = JSON.stringify(item);
     let httpOptions = 
     {
@@ -39,7 +39,7 @@ export class FlightService {
   }
   update(item: Flightmodel) {
     //this.productList.push(item);
-    let url = this.flightUrl+"/addFlight";
+    let url = this.flightUrl;
     let body = JSON.stringify(item);
     let httpOptions = 
     {
@@ -47,14 +47,14 @@ export class FlightService {
         "Content-Type": "application/json"
       })
     }
-    return this.http.post(url, body, httpOptions); 
+    return this.http.put(url, body, httpOptions); 
   }
   search(from:string,to:string,date:string) {
     let url = this.flightUrl + "/search/" + from + "/" + to + "/" + date;
     return this.http.get(url);
   }
   remove(id: number) {
-    let url = this.flightUrl + "/deleteFlightById/" + id;
+    let url = this.flightUrl + "/" + id;
     return this.http.delete(url);
   }
 }
