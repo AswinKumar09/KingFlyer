@@ -25,7 +25,7 @@ export class AllFlightsComponent implements OnInit {
     })
   }
   book(item:Flightmodel) {
-    this.router.navigate(["/user/bookingticket/"+this.id+"/"+item.flightNo]);
+    this.router.navigate(["/user/bookingticket/"+this.id+"/"+item.flightNo+"/0"]);
   }
 
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.9/angular.min.js"></script>
   <script type="text/javascript">
@@ -52,3 +53,29 @@
     
   
 </div>
+=======
+<div style = "text-align: center">
+  <h3>Upcoming Trips</h3>
+</div>
+  
+  
+  <div class="row">
+  <div class="col-12 ml-2">
+  
+  <table class="table table-dark table-striped">
+      <thead><tr><th>PNR</th><th>From</th><th>To</th><th></th></tr></thead>
+      <tbody>
+        <tr *ngFor="let item of bookingmodels">
+          <td>{{item.bookingId}}</td>
+          <td>{{item.departure}}</td>
+          <td>{{item.arrival}}</td>
+          <td>
+            <button  class="btn btn-secondary mr-2" (click)="getDetails(item)">Get Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  </div>
+  
+>>>>>>> 33c683c5333703ca3bcd0cecdade7f0583896b4b
