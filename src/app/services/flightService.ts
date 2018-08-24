@@ -27,11 +27,7 @@ export class FlightService {
   }
   create(item: Flightmodel) {
     //this.productList.push(item);
-<<<<<<< HEAD
-    let url = this.flightUrl + "/addFlight";
-=======
     let url = this.flightUrl + "/addFlight" ;
->>>>>>> 96311388c08782ead14cf44ba9481963f01ec21e
     let body = JSON.stringify(item);
     let httpOptions = 
     {
@@ -43,11 +39,7 @@ export class FlightService {
   }
   update(item: Flightmodel) {
     //this.productList.push(item);
-<<<<<<< HEAD
-    let url = this.flightUrl + "/addFlight";
-=======
     let url = this.flightUrl + "/addFlight"; 
->>>>>>> 96311388c08782ead14cf44ba9481963f01ec21e
     let body = JSON.stringify(item);
     let httpOptions = 
     {

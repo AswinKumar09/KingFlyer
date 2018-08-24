@@ -11,13 +11,9 @@ const routes: Routes = [{
   path: "user",
     canActivate:[AuthenticationGuard],
     children: [
-<<<<<<< HEAD
-   
-=======
   {path:"signin", component:UserlogginComponent}, 
   {path:"signup", component:UsersignupComponent}, 
   {path:"bookingticket", component:BookingTicketComponent},
->>>>>>> 96311388c08782ead14cf44ba9481963f01ec21e
   {path:"dash/:id", component:UserdashboardComponent},
   {path:"manageaccount/:id", component:ManageAccountComponent}]}
 ];
