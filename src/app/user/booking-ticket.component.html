@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <html>
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
@@ -55,3 +56,49 @@
 <button type="submit" (click)="review()">Booking Review</button>
 </body>
 </html>
+=======
+<div class = "container">
+  <div class = "row">
+    <div class = "col-md-12">
+    <div style = "text-align: center">
+    <table>
+    <tr> <td> FlightName : </td><td><input  [(ngModel)]="flightModel.flightName" readonly/></td> </tr>
+    
+    
+    <tr><td>Source : </td><td><input  [(ngModel)]="flightModel.source" readonly/></td></tr>    
+    
+      <tr><td>Destination :</td><td> <input  [(ngModel)]="flightModel.destination" readonly/></td></tr>
+      <tr><td>Date :</td><td> <input  type = "date" [(ngModel)]="bookingModel.day" value = "{{date}}"/></td></tr>
+    
+  </table>
+</div>
+  </div>
+</div>
+</div>
+
+  <button type = "button" class = "btn btn-primary m-1" (click)="addNew()">Add New</button>
+<div class="row">
+    
+      <div class="col-4">
+        <app-booking-ticket-child [model]="selectedModel"
+          (createEvent)="create($event)"></app-booking-ticket-child>
+      </div>
+      <div class="col-4">
+          
+            <table class="table table-dark table-striped">
+                <thead><tr><th>Passenger Name</th><th>Age</th><th>Gender</th><th></th></tr></thead>
+                <tbody>
+                  <tr *ngFor="let item of passengers">
+                    <td>{{item.name}}</td>
+                    <td>{{item.age}}</td>
+                    <td>{{item.gender}}</td>
+                  </tr>
+                  <button class="btn btn-sm btn-warning mr-2" (click)="delete()">delete Last</button> 
+                </tbody>
+              </table>
+          </div>
+      <div>
+        <button class = "btn btn-primary" (click) = "submit()">Submit</button>
+      </div>
+  </div>
+>>>>>>> 33c683c5333703ca3bcd0cecdade7f0583896b4b

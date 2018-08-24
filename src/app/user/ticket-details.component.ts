@@ -6,28 +6,25 @@ import { ActivatedRoute, ParamMap } from "@angular/router";
 
 
 @Component({
-  selector: 'app-upcoming-trips',
-  templateUrl: './upcoming-trips.component.html',
-  styleUrls: ['./upcoming-trips.component.css']
+  selector: 'app-ticket-details',
+  templateUrl: './ticket-details.component.html',
+  styleUrls: ['./ticket-details.component.css']
 })
-export class UpcomingTripsComponent implements OnInit {
+export class TicketDetailsComponent implements OnInit {
 
-  bookingmodels : Bookinghistorymodel[] = [];
+  bookingmodel : Bookinghistorymodel;
 
   constructor(private service:bookingHistoryService, private router:Router, private route:ActivatedRoute) { }
 
   id:any;
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get("id");
+    this.bookingmodel = new Bookinghistorymodel("","","","","","","","");
     this.loadAll();
-    
   }
   loadAll(){
-    this.service.getDetails(this.id).subscribe((Response)=>{
-    this.bookingmodels=Response as any[];
-    })
+    this.service.getById(this.id).subscribe((Response)=>{
+    this.bookingmodel=Response as any;
+    });
   }
-
-
-
 }

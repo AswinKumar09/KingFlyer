@@ -24,6 +24,9 @@ import { BookingTicketComponent } from './user/booking-ticket.component';
 import { BookingReviewComponent } from './user/booking-review.component';
 import { PaymentComponent } from './user/payment.component';
 import { AdminloginComponent } from './adminlogin.component';
+import { BookingTicketChildComponent } from './user/booking-ticket-child.component';
+import { AllFlightsComponent } from './user/all-flights.component';
+import { TicketDetailsComponent } from './user/ticket-details.component';
 
 
 @NgModule({
@@ -45,7 +48,9 @@ import { AdminloginComponent } from './adminlogin.component';
     BookingReviewComponent,
     PaymentComponent,
     AdminloginComponent,
-  
+    BookingTicketChildComponent,
+    AllFlightsComponent,
+    TicketDetailsComponent
   ],
   imports: [
     BrowserModule,

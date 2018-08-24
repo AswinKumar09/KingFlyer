@@ -21,6 +21,7 @@ export class HomeComponent implements OnInit {
   d:string;
   constructor(private service:FlightService, private router:Router) {
     this.model = new Flightmodel('','','','','','','','');
+    this.flightList = null;
   }
 
   loadAll() {

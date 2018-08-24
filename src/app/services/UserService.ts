@@ -14,21 +14,21 @@ export class UserService {
   constructor(private http: HttpClient) { 
     //this.productList = products;
   }
-  userUrl: string = "http://localhost:2020/FlightBackendService"
+  userUrl: string = "http://localhost:2020/UserBackendService"
   getAll() {
-    let url = this.userUrl + "/getAllUsers";
+    let url = this.userUrl + "/api/user";
     return this.http.get(url);
     //return this.productList;
   }
   getDetails(id: string) {
-    let url = this.userUrl + "/getUserById/" + id;
+    let url = this.userUrl + "/api/user/" + id;
     return this.http.get<Usermodel>(url);
     // let item = this.productList.find((c)=>c.productId==id);
     // return item;
   }
   create(item: Usermodel) {
     //this.productList.push(item);
-    let url = this.userUrl+"/addUser";
+    let url = this.userUrl+"/api/user";
     let body = JSON.stringify(item);
     let httpOptions = 
     {
@@ -40,7 +40,7 @@ export class UserService {
   }
   update(item: Usermodel) {
     //this.productList.push(item);
-    let url = this.userUrl+"/addUser";
+    let url = this.userUrl+"/api/user";
     let body = JSON.stringify(item);
     let httpOptions = 
     {
@@ -51,11 +51,11 @@ export class UserService {
     return this.http.post(url, body, httpOptions); 
   }
   getPass(email:string) {
-    let url = this.userUrl + "/getPassword/" + email;
+    let url = this.userUrl + "/api/user/email/" + email;
     return this.http.get<Usermodel>(url);
   }
   remove(id: number) {
-    let url = this.userUrl + "/deleteUserById/" + id;
+    let url = this.userUrl + "/api/user/" + id;
     return this.http.delete(url);
   }
 }

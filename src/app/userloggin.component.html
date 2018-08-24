@@ -15,15 +15,18 @@
           <div class="card text-white p-5 bg-primary w-100 h-100">
             <div class="card-body">
               <h1 class="mb-4 text-dark">Login form</h1>
-              <form action="https://formspree.io/YOUREMAILHERE">
+              <form>
                 <div class="form-group">
                   <label>Email address</label>
                   <input type="email" name="email" [(ngModel)]="model.email" class="form-control" placeholder="Enter email"> </div>
                 <div class="form-group">
                   <label>Password</label>
                   <input type="password" name="password" [(ngModel)]="model.password" class="form-control" placeholder="Password"> </div>
+                  
                 <button type="submit" class="btn btn-secondary  btn-space" (click)="login()">Login</button>
-                <a class="btn btn-secondary" [routerLink]="['/signup']" >Create Account </a>
+                <br>
+                <br>
+                <a class="form-group" style = "color: white" [routerLink]="['/signup']"><u>New User ?</u></a>
                 <!-- <a [routerLink]="['/']">Forget password</a> -->
 
               </form>

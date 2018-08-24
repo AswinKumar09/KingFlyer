@@ -12,18 +12,18 @@ import { FlightService } from "./services/flightService";
 export class SearchDetailComponent implements OnInit {
 
   models: Flightmodel[];
-
+  dt:string;
   constructor(private router:Router,private route: ActivatedRoute,private service:FlightService) {
    }
 
-
+  
   ngOnInit()
  {
   let from=this.route.snapshot.paramMap.get("from");
   let to=this.route.snapshot.paramMap.get("to");
-  let dt=this.route.snapshot.paramMap.get("date");
+  this.dt=this.route.snapshot.paramMap.get("date");
 
-  this.service.search(from, to, dt).subscribe((response) => {
+  this.service.search(from, to, this.dt).subscribe((response) => {
     this.models = response as any[];
     console.log("Request returns : ", this.models);
   })
@@ -37,9 +37,8 @@ export class SearchDetailComponent implements OnInit {
   //   this.model=response;
   }
 
-  book() {
-   
-    this.router.navigate(["/user/bookingticket"]);
+  book(item:Flightmodel) {
+    this.router.navigate(["/signin/"+item.flightNo+"/"+this.dt]);
   }
 
 
