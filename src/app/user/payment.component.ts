@@ -42,7 +42,7 @@ export class PaymentComponent implements OnInit {
   mail() {
     this.bService.mail(this.bId,this.email).subscribe({
       complete:() => {
-        this.router.navigate(["/user/dash/"+this.uId]);
+        this.router.navigate(["/payment-status/" + this.uId]);
       }
     });
   }
