@@ -18,12 +18,16 @@ import { Usermodel } from "../model/userModel";
    constructor(private service:UserService,private http:HttpClient) { 
     this.model = new LoginModel("", "");
   }
-  login(item: LoginModel) {
+  login(item: LoginModel): Observable<boolean> {
     this.model = item;
+<<<<<<< HEAD
+    let pass : string; 
+   this.service.getPass(this.model.email).subscribe((response) => {
+=======
     this.service.getPass(this.model.email).subscribe((response) => {
+>>>>>>> 9b37f1d2693a354e3bb9cb6f950632b9357f68e8
         this.userModel = response as any;
-      
-        console.log("Request returns : ", this.userModel.password);
+        
     });
     if(this.userModel.password == this.model.password){
         this.isLoggedIn = true;
