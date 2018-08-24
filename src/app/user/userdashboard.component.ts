@@ -19,6 +19,7 @@ export class UserdashboardComponent implements OnInit {
   model: LoginModel;
   ngOnInit() {
     let id = this.route.snapshot.paramMap.get("id");
+    this.umodel = new Usermodel("","","","","","");
     this.service.getDetails(id).subscribe((response) => {
       this.umodel = response as any;
   });

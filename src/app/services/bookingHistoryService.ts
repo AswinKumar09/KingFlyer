@@ -13,10 +13,10 @@ export class bookingHistoryService {
   constructor(private http: HttpClient) { 
     //this.productList = products;
   }
-  flightUrl: string = "http://localhost:2020/FlightBackendService";
+  bookUrl: string = "http://localhost:2020/BookingBackendService";
   create(item: Bookinghistorymodel) {
     //this.productList.push(item);
-    let url = this.flightUrl + "/addBooking" ;
+    let url = this.bookUrl + "/api/booking" ;
     let body = JSON.stringify(item);
     let httpOptions = 
     {
@@ -26,4 +26,18 @@ export class bookingHistoryService {
     }
     return this.http.post(url, body, httpOptions); 
   }
+  getDetails(id: string) {
+    let url = this.bookUrl + "/api/booking/" + id;
+    return this.http.get(url);
+  }
+  getById(id: string) {
+    let url = this.bookUrl + "/api/booking/id/" + id;
+    return this.http.get(url);
+  }
+  remove(id: string) {
+    let url = this.bookUrl + "/api/flight/" + id;
+    return this.http.delete(url);
+  }
+
+
 }

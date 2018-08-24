@@ -8,14 +8,13 @@ import { Usermodel } from "../model/userModel";
 
 @Injectable({
   providedIn: 'root'
-})
-export class AuthenticationService {
+ })
+  export class AuthenticationService {
   isLoggedIn: boolean = false;
   redirectUrl: string = ""; 
   model: LoginModel; 
   userModel : Usermodel;
-
-  constructor(private service:UserService) { 
+   constructor(private service:UserService) { 
     this.model = new LoginModel("", "");
   }
   login(item: LoginModel) {
@@ -23,12 +22,12 @@ export class AuthenticationService {
     let pass : string; 
     this.service.getPass(this.model.email).subscribe((response) => {
         this.userModel = response as any;
-        
+      
         console.log("Request returns : ", this.userModel.password);
     });
     if(this.userModel.password == this.model.password){
         this.isLoggedIn = true;
-        return of(true);
+       return of(true);
     }
     return of(false);
   }
