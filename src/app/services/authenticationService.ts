@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { LoginModel } from '../model/login-model';
 import { delay, tap } from 'rxjs/operators';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { UserService } from "../services/UserService";
-import { Password } from "../model/password";
 import { Usermodel } from "../model/userModel";
 
 @Injectable({
@@ -13,13 +13,13 @@ import { Usermodel } from "../model/userModel";
   isLoggedIn: boolean = false;
   redirectUrl: string = ""; 
   model: LoginModel; 
+  url:string="http://localhost:2020/UserBackendService/api/user/email";
   userModel : Usermodel;
-   constructor(private service:UserService) { 
+   constructor(private service:UserService,private http:HttpClient) { 
     this.model = new LoginModel("", "");
   }
   login(item: LoginModel) {
     this.model = item;
-    let pass : string; 
     this.service.getPass(this.model.email).subscribe((response) => {
         this.userModel = response as any;
       
@@ -31,6 +31,17 @@ import { Usermodel } from "../model/userModel";
     }
     return of(false);
   }
+
+  validateLogin(item:LoginModel){
+    let body= JSON.stringify(item);
+    let httpOptions={
+      headers: new HttpHeaders({
+        "Content-Type":"application/json"
+      })
+    }
+    return this.http.post(this.url,body,httpOptions);
+  }
+  
   logout(item: LoginModel): void {
     this.model = new LoginModel("", ""); 
     this.isLoggedIn = false; 

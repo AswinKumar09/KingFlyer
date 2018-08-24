@@ -13,6 +13,7 @@ export class UserdashHeaderComponent implements OnInit {
   id:any;
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get("id");
+    
   }
   submit() {
     this.router.navigate(["/allFlights/"+this.id]);

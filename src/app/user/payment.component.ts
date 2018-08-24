@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
+import { ActivatedRoute, ParamMap } from "@angular/router";
+import { bookingHistoryService } from "../services/bookingHistoryService";
 
 @Component({
   selector: 'app-payment',
@@ -12,12 +15,17 @@ export class PaymentComponent implements OnInit {
   isCreditCard: boolean = false; 
   isDebitCard: boolean = false; 
   isSelected:boolean = false;
-
+  bId:string;
+  email:string;
   netBanking:any=3; 
-
-  constructor() { }
+  uId:string;
+  constructor(private route:ActivatedRoute, private router:Router,
+  private bService:bookingHistoryService) { }
 
   ngOnInit() {
+    this.bId=this.route.snapshot.paramMap.get("id");
+    this.uId=this.route.snapshot.paramMap.get("uid");
+    this.email = this.route.snapshot.paramMap.get("email");
   }
   updateUI(mode){
     this.isNetBanking=false; 
@@ -29,6 +37,14 @@ export class PaymentComponent implements OnInit {
       this.isCreditCard=true; 
     else if(mode=="1")
       this.isDebitCard=true;
+  }
+
+  mail() {
+    this.bService.mail(this.bId,this.email).subscribe({
+      complete:() => {
+        this.router.navigate(["/user/dash/"+this.uId]);
+      }
+    });
   }
 
 }
