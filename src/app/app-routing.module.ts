@@ -13,14 +13,8 @@ import { PaymentComponent } from './user/payment.component';
 import { AdminloginComponent } from "./adminlogin.component";
 import { AdminDashboardComponent } from './admin/admin-dashboard.component';
 import { UpcomingTripsComponent } from "./user/upcoming-trips.component";
-<<<<<<< HEAD
-import { BookingHistoryComponent } from './user/booking-history.component';
-
-
-=======
 import { BookingHistoryComponent } from "./user/booking-history.component";
 import { bookingHistoryService } from './services/bookingHistoryService';
->>>>>>> 33c683c5333703ca3bcd0cecdade7f0583896b4b
 
 
 const routes: Routes = [
