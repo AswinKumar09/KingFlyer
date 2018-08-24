@@ -14,14 +14,16 @@ export class CreateflightComponent implements OnInit {
   constructor(private service:FlightService,private router:Router) { }
 
   ngOnInit() {
+    this.model = new Flightmodel("","","","","","","","");
   }
 
   submit()
   {
+    this.model.flightNo=0;
     this.service.create(this.model).subscribe({
       complete:()=>{
         console.log("completed");
-        this.router.navigate(["/product"])
+        this.router.navigate(["/admindashboard"])
       }
     });
   }
