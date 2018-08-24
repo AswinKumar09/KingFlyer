@@ -23,11 +23,22 @@ export class UpcomingTripsComponent implements OnInit {
     
   }
   loadAll(){
-    this.service.getDetails(this.id).subscribe((Response)=>{
+    this.service.getUpcoming().subscribe((Response)=>{
     this.bookingmodels=Response as any[];
-    })
+    });
+    
+
+  }
+  getDetails(item:Bookinghistorymodel) {
+    this.router.navigate(["/user/ticketdetails/"+item.bookingId]);
   }
 
-
+  delete(item:Bookinghistorymodel) {
+    this.service.remove(item.bookingId).subscribe({
+      complete:() => {
+        this.loadAll();
+      }
+    });
+  }
 
 }

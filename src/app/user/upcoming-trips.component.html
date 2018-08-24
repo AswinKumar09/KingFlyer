@@ -1,24 +1,30 @@
 <div style = "text-align: center">
-  <h3>Upcoming Trips</h3>
-</div>
-  
-  
-  <div class="row">
-  <div class="col-12 ml-2">
-  
-  <table class="table table-dark table-striped">
-      <thead><tr><th>PNR</th><th>From</th><th>To</th><th></th></tr></thead>
-      <tbody>
-        <tr *ngFor="let item of bookingmodels">
-          <td>{{item.bookingId}}</td>
-          <td>{{item.departure}}</td>
-          <td>{{item.arrival}}</td>
-          <td>
-            <button  class="btn btn-secondary mr-2" (click)="getDetails(item)">Get Details</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <h3>Booked Tickets</h3>
   </div>
-  </div>
+    
+    
+    <div class="row">
+    <div class="col-12 ml-2">
+    
+    <table class="table table-dark table-striped">
+        <thead><tr><th>PNR</th><th>Flight Name</th><th>From</th><th>To</th><th>Date</th></tr></thead>
+        <tbody>
+          <tr *ngFor="let item of bookingmodels">
+            <td>{{item.bookingId}}</td>
+            <td>{{item.flightName}}</td>
+            <td>{{item.departure}}</td>
+            <td>{{item.arrival}}</td>
+            <td>{{item.day}}</td>
+            <td>
+              <button  class="btn btn-secondary mr-2" (click)="getDetails(item)">Get Details</button>
+            </td>
+            <td>
+                <button  class="btn btn-secondary mr-2" (click)="delete(item)">Cancel Booking</button>
+              </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    </div>
+    
   
