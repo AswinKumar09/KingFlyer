@@ -31,6 +31,7 @@ import { ResetPasswordComponent } from './reset-password.component';
 import { ResetComponent } from './reset.component';
 import { PaymentStatusComponent } from './user/payment-status.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
