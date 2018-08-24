@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from "@angular/common/http"
 import { Observable } from "rxjs";
 import { Usermodel } from "../model/userModel"    
-import { Password } from "../model/password";
 
 
 @Injectable({
@@ -58,4 +57,9 @@ export class UserService {
     let url = this.userUrl + "/api/user/" + id;
     return this.http.delete(url);
   }
+  getThrough(email:string, password:string) {
+    let url = this.userUrl + "/api/user/email/" + email+"/"+password;
+    return this.http.get<Usermodel>(url);
+  }
+  
 }

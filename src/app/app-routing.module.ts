@@ -14,7 +14,9 @@ import { AdminloginComponent } from "./adminlogin.component";
 import { AdminDashboardComponent } from './admin/admin-dashboard.component';
 import { UpcomingTripsComponent } from "./user/upcoming-trips.component";
 import { BookingHistoryComponent } from "./user/booking-history.component";
+import { ResetPasswordComponent } from "./reset-password.component";
 import { bookingHistoryService } from './services/bookingHistoryService';
+import { ResetComponent } from "./reset.component";
 
 
 const routes: Routes = [
@@ -22,16 +24,20 @@ const routes: Routes = [
   {path:"", redirectTo:"/home", pathMatch:"full"},
   {path:"search/:from/:to/:date",component:SearchDetailComponent},
   {path:"signup",component:UsersignupComponent},
+  {path:"reset-password",component:ResetPasswordComponent},
   {path:"signin",component:UserlogginComponent},
   {path:"signin/:fNo/:date",component:UserlogginComponent},
   {path:"bookingreview",component:BookingReviewComponent},
   {path:"user/upcomingtrips/:id",component:UpcomingTripsComponent},
+  {path:"reset/:id",component:ResetComponent},
   {path:"user/bookinghistory/:id",component:bookingHistoryService},
   {path:"payment",component:PaymentComponent},
   {path:"signin",component:UserlogginComponent},
   {path:"signup",component:UsersignupComponent},
   {path:"adminlogin",component:AdminloginComponent},
   {path:"admindashboard",component:AdminDashboardComponent},
+  {path:"upcomingtrips",component:UpcomingTripsComponent},
+  {path:"bookinghistory",component:BookingHistoryComponent}
 ];
 
 @NgModule({

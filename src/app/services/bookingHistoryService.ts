@@ -30,8 +30,8 @@ export class bookingHistoryService {
     let url = this.bookUrl + "/api/booking/" + id;
     return this.http.get(url);
   }
-  getUpcoming() {
-    let url = this.bookUrl + "/api/booking/upcoming";
+  getUpcoming(id: string) {
+    let url = this.bookUrl + "/api/booking/upcoming/" + id;
     return this.http.get(url);
   }
   getById(id: string) {
@@ -41,6 +41,16 @@ export class bookingHistoryService {
   remove(id: string) {
     let url = this.bookUrl + "/api/booking/" + id;
     return this.http.delete(url);
+  }
+
+  mail(id: string, email: string) {
+    let url = this.bookUrl + "/api/booking/mailclient/" + id +"/" + email;
+    return this.http.get(url);
+  }
+
+  reset(email:string, uid:number) {
+    let url = this.bookUrl + "/api/booking/reset/" + email + "/" + uid;
+    return this.http.get(url);
   }
 
 

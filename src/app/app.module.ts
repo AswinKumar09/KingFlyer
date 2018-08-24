@@ -27,6 +27,8 @@ import { AdminloginComponent } from './adminlogin.component';
 import { BookingTicketChildComponent } from './user/booking-ticket-child.component';
 import { AllFlightsComponent } from './user/all-flights.component';
 import { TicketDetailsComponent } from './user/ticket-details.component';
+import { ResetPasswordComponent } from './reset-password.component';
+import { ResetComponent } from './reset.component';
 
 
 @NgModule({
@@ -50,7 +52,9 @@ import { TicketDetailsComponent } from './user/ticket-details.component';
     AdminloginComponent,
     BookingTicketChildComponent,
     AllFlightsComponent,
-    TicketDetailsComponent
+    TicketDetailsComponent,
+    ResetPasswordComponent,
+    ResetComponent
   ],
   imports: [
     BrowserModule,
