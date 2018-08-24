@@ -13,6 +13,7 @@ import { PaymentComponent } from './user/payment.component';
 import { AdminloginComponent } from "./adminlogin.component";
 import { AdminDashboardComponent } from './admin/admin-dashboard.component';
 import { UpcomingTripsComponent } from "./user/upcoming-trips.component";
+import { BookingHistoryComponent } from './user/booking-history.component';
 
 
 
@@ -29,6 +30,8 @@ const routes: Routes = [
   {path:"signup",component:UsersignupComponent},
   {path:"adminlogin",component:AdminloginComponent},
   {path:"admindashboard",component:AdminDashboardComponent},
+  {path:"upcomingtrips",component:UpcomingTripsComponent},
+  {path:"bookinghistory",component:BookingHistoryComponent}
 ];
 
 @NgModule({

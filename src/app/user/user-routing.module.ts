@@ -7,6 +7,7 @@ import { BookingTicketComponent } from "./booking-ticket.component";
 import { ManageAccountComponent } from "./manage-account.component";
 import { AuthenticationGuard } from "../services/authentication.guard";
 import { AllFlightsComponent } from "./all-flights.component";
+
 const routes: Routes = [{
   path: "user",
     canActivate:[AuthenticationGuard],

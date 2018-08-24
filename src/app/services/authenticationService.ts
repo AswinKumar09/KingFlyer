@@ -18,19 +18,36 @@ export class AuthenticationService {
   constructor(private service:UserService) { 
     this.model = new LoginModel("", "");
   }
-  login(item: LoginModel) {
+  login(item: LoginModel): Observable<boolean> {
     this.model = item;
     let pass : string; 
-    this.service.getPass(this.model.email).subscribe((response) => {
+   /* this.service.getPass(this.model.email).subscribe((response) => {
         this.userModel = response as any;
-        
+        this.isLoggedIn = true;     
         console.log("Request returns : ", this.userModel.password);
+        return of(true).pipe(
+          tap(c=>this.isLoggedIn=true)
+        ); 
     });
-    if(this.userModel.password == this.model.password){
-        this.isLoggedIn = true;
-        return of(true);
-    }
-    return of(false);
+    return of(this.isLoggedIn);*/
+    //return this.service.getPass(this.model.email);
+    let isValid=false;
+    
+    return of(true).pipe(
+      tap(c=>{this.service.getPass(this.model.email).subscribe((response)=>{
+    
+        if(response!=null){
+          this.model = response; 
+          isValid=true;
+         
+        } 
+        else {
+          isValid=false;
+        }
+      
+      })}),
+      tap(c=>this.isLoggedIn=isValid)
+    );
   }
   logout(item: LoginModel): void {
     this.model = new LoginModel("", ""); 

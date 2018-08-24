@@ -16,7 +16,7 @@ export class UserlogginComponent implements OnInit {
   message : string;
   umodel : Usermodel;
   id: number;
-  constructor(public uservice:UserService, public authService : AuthenticationService,public router:Router) { 
+  constructor(public authService : AuthenticationService,public router:Router) { 
     this.model = authService.model;
     this.setMessage();
   }
@@ -29,16 +29,15 @@ export class UserlogginComponent implements OnInit {
   login() {
     this.message = "Trying to login......";
 
-    this.authService.login(this.model).subscribe(() => {
-      this.setMessage();
+    this.authService.login(this.model).subscribe((response) => {
+      this.authService.isLoggedIn = response; 
+      console.log(response);
+      //this.setMessage();
       if (this.authService.isLoggedIn) {
-        this.uservice.getPass(this.model.email).subscribe((response) => {
-          this.umodel = response as any;
-        });
-        this.id = this.umodel.id;
-        console.log(this.id);
+       // this.id = this.umodel.id;
+        //onsole.log(this.id);
         let redirectUrl = this.authService.redirectUrl ? this.authService.redirectUrl : "/user/dash/"+this.id; 
-        this.router.navigate(["/user/dash/"+this.id]);
+        this.router.navigate([redirectUrl]);
       }
       else {
         this.router.navigate(["/signup"]);

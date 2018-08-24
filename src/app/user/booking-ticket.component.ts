@@ -59,6 +59,7 @@ export class BookingTicketComponent implements OnInit {
     this.bookingModel.departure=this.flightModel.source;
     this.bookingModel.arrival=this.flightModel.destination;
     this.bookingModel.passengers=this.passengers;
+    console.log(this.bookingModel.passengers);
     this.bService.create(this.bookingModel).subscribe({
       complete:() => {
         console.log("completed");
