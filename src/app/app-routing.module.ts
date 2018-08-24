@@ -17,6 +17,7 @@ import { BookingHistoryComponent } from "./user/booking-history.component";
 import { bookingHistoryService } from './services/bookingHistoryService';
 
 
+
 const routes: Routes = [
   {path:"home", component:HomeComponent}, 
   {path:"", redirectTo:"/home", pathMatch:"full"},
