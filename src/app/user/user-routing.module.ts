@@ -9,6 +9,7 @@ import { AuthenticationGuard } from "../services/authentication.guard";
 import { AllFlightsComponent } from "./all-flights.component";
 import { BookingHistoryComponent } from "./booking-history.component";
 import { TicketDetailsComponent } from "./ticket-details.component";
+import { PaymentComponent } from "./payment.component";
 const routes: Routes = [{
   path: "user",
     canActivate:[AuthenticationGuard],
@@ -19,6 +20,7 @@ const routes: Routes = [{
   {path:"bookingticket/:userid/:flightNo/:date", component:BookingTicketComponent},
   {path:"ticketdetails/:id", component:TicketDetailsComponent},
   {path:"dash/:id", component:UserdashboardComponent},
+  {path:"payment/:uid/:id/:email", component:PaymentComponent},
   {path:"allFlights/:id", component:AllFlightsComponent},
   {path:"manageaccount/:id", component:ManageAccountComponent}]}
 ];

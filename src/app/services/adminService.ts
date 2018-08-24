@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders } from "@angular/common/http"
 import { Observable } from "rxjs";
 import { LoginModel } from "../model/login-model";
 import { Usermodel } from "../model/userModel"    
-import { Password } from "../model/password";
+
 
 
 @Injectable({
