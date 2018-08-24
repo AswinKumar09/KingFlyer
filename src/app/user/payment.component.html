@@ -48,7 +48,7 @@
                         >
                        Pay
                      </button>
-                     <button type="button" class="btn btn-outline-warning mr-2" [routerLink]="['../home']">
+                     <button type="button" class="btn btn-outline-warning mr-2" (click)="mail()">
                      Cancel </button>
            </div>
          </div>
@@ -112,7 +112,7 @@
                          placeholder="Card Holder's Name"
                            class="form-control"   />
                        </div>
-                     <button type="button" class="btn btn-outline-primary mr-2" [routerLink]="['confirm']"
+                     <button type="button" class="btn btn-outline-primary mr-2" (click) = "mail()"
                         >
                        Pay
                      </button>
@@ -191,17 +191,17 @@
                          placeholder="Card Holder's Name"
                            class="form-control"   />
                        </div>
-                     <button type="button" class="btn btn-outline-primary mr-2" [routerLink]="['confirm']"
+                     <button type="button" class="btn btn-outline-primary mr-2" (click) = "mail()"
                         >
                        Pay
                      </button>
-                     <button type="button" class="btn btn-outline-warning mr-2" [routerLink]="['../home']">
+                     <button type="button" class="btn btn-outline-warning mr-2" [routerLink]="['/home']">
                      Cancel </button>
                      
-                     <button (click) = "mail()">mail</button>
+                     
                  </form>
+                 
                  </div>  
-
                </div>
              </div>
          
