@@ -5,7 +5,7 @@ export class Bookinghistorymodel {
     bookingId:string;
     flightNo:number;
     flightName:string;
-    userNo:string;
+    userNo:number;
     departure:string;
     arrival: string;
     day:string;
