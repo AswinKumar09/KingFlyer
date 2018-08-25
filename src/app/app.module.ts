@@ -30,6 +30,7 @@ import { TicketDetailsComponent } from './user/ticket-details.component';
 import { ResetPasswordComponent } from './reset-password.component';
 import { ResetComponent } from './reset.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

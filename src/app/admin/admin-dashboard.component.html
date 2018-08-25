@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-4 col-md-offset-3 mb-2">
-    <form>
+    <!-- <form>
       <div class="input-group">
         <div class="input-group-text ">Search:</div>
         <input type="search" name="search"/>
@@ -10,10 +10,10 @@
           </button>
         </div>
       </div>
-    </form>
+    </form> -->
   </div>
-  <div class="col-md-2 m-2">
-    <a class="btn btn-outline-dark" routerLink="/create/new">Add new</a>
+  <div class="col-md-2 m-4">
+    <a class="btn btn-primary " routerLink="/create/new"><b>Add New Flight</b></a>
   </div>
   
 </div>
@@ -28,12 +28,11 @@
       <tr *ngFor="let item of productList">
         <td>{{item.source}}</td>
         <td>{{item.destination}}</td>
-        <td>{{item.availDays}}</td>
         <td>{{item.departure}}</td>
         <td>{{item.arrival}}</td>
         
         <td>
-          <button  class="btn btn-secondary mr-2" routerLink="/create/new">Add new</button>
+          <!-- <button  class="btn btn-secondary mr-2" routerLink="/create/new">Add new</button> -->
           <a class="btn btn-primary mr-2" href="editflight/{{item.flightNo}}">Edit </a> 
           <button class="btn  btn-warning mr-2" (click)="remove(item.flightNo)">Delete </button> 
         </td>

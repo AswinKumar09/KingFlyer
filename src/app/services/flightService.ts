@@ -47,7 +47,7 @@ export class FlightService {
         "Content-Type": "application/json"
       })
     }
-    return this.http.put(url, body, httpOptions); 
+    return this.http.post(url, body, httpOptions); 
   }
   search(from:string,to:string,date:string) {
     let url = this.flightUrl + "/api/flight/" + from + "/" + to + "/" + date;
