@@ -27,7 +27,7 @@ export class EditFlightsComponent implements OnInit {
   {
     this.service.update(this.model).subscribe({
       complete:()=>{
-        console.log("completed");
+        console.log(this.model);
         this.router.navigate(["/admindashboard"]);
       }
     });

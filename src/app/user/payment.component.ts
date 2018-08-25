@@ -40,9 +40,10 @@ export class PaymentComponent implements OnInit {
   }
 
   mail() {
+    document.getElementById("i").setAttribute("style","display:block;font-size:24px")
     this.bService.mail(this.bId,this.email).subscribe({
       complete:() => {
-        this.router.navigate(["/user/dash/"+this.uId]);
+        this.router.navigate(["/user/payment-status/" + this.uId]);
       }
     });
   }
