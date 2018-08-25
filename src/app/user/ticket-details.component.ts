@@ -19,7 +19,7 @@ export class TicketDetailsComponent implements OnInit {
   id:any;
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get("id");
-    this.bookingmodel = new Bookinghistorymodel("","","","","","","","");
+    this.bookingmodel = new Bookinghistorymodel("","","","","","","","","");
     this.loadAll();
   }
   loadAll(){

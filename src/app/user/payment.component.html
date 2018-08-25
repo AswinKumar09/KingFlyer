@@ -44,11 +44,12 @@
 
                    </datalist>
                    <input list="banks" type="text">
-                 <button type="button" class="btn btn-outline-primary mr-2" [routerLink]="['confirm']"
+                   <i class = "fa fa-spinner" id = "i" style = "display: none"></i>
+                 <button type="button" class="btn btn-outline-primary mr-2" (click)="mail()"
                         >
                        Pay
                      </button>
-                     <button type="button" class="btn btn-outline-warning mr-2" (click)="mail()">
+                     <button type="button" class="btn btn-outline-warning mr-2" >
                      Cancel </button>
            </div>
          </div>

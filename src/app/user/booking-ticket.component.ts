@@ -33,7 +33,7 @@ export class BookingTicketComponent implements OnInit {
     this.userid=this.route.snapshot.paramMap.get("userid");
     this.flightNo=this.route.snapshot.paramMap.get("flightNo");
     this.date=this.route.snapshot.paramMap.get("date");
-    this.bookingModel = new Bookinghistorymodel("","","","","","","","");
+    this.bookingModel = new Bookinghistorymodel("","","","","","","","","");
     this.bookingModel.day = this.date;
     this.fService.getDetails(this.flightNo).subscribe((response) => {
       this.flightModel = response as any;
@@ -68,6 +68,7 @@ export class BookingTicketComponent implements OnInit {
     this.bookingModel.departure=this.flightModel.source;
     this.bookingModel.arrival=this.flightModel.destination;
     this.bookingModel.passengers=this.passengers;
+    this.bookingModel.amount = this.passengers.length * this.flightModel.amount;
     this.bookingModel.bookingId = this.flightNo+this.userid+this.bookingModel.day;
     this.bService.create(this.bookingModel).subscribe({
       complete:() => {
