@@ -44,6 +44,9 @@ export class PaymentComponent implements OnInit {
     this.bService.mail(this.bId,this.email).subscribe({
       complete:() => {
         this.router.navigate(["/user/payment-status/" + this.uId]);
+      },
+      error:() => {
+        this.router.navigate(["/user/payment-status/" + this.uId]);
       }
     });
   }

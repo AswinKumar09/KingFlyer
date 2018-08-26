@@ -20,9 +20,11 @@ export class ResetPasswordComponent implements OnInit {
   ngOnInit() {
   }
   mail() {
-    this.uService.getPass(this.lModel.email).subscribe((response) => {
+    this.uService.getPass(this.lModel.email).subscribe(
+      (response) => {
       this.uModel = response as any;
-    });
+    }
+  );
     this.bService.reset(this.lModel.email, this.uModel.id).subscribe({
       complete:() => {
         console.log("completed");

@@ -9,6 +9,7 @@ export class Bookinghistorymodel {
     departure:string;
     arrival: string;
     day:string;
+    time:string;
     passengers:PassengerModel[];
     amount:number;
 

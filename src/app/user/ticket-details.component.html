@@ -7,11 +7,12 @@
     <div class="col-12 ml-2">
     
     <table class="table table-dark table-striped">
-        <thead><tr><th>PNR</th><th>From</th><th>To</th></tr></thead>
+        <thead><tr><th>PNR</th><th>FlightName</th><th>From</th><th>To</th></tr></thead>
         <tbody>
           
           <tr>
             <td>{{bookingmodel.bookingId}}</td>
+            <td>{{bookingmodel.flightName}}</td>
             <td>{{bookingmodel.departure}}</td>
             <td>{{bookingmodel.arrival}}</td>
           </tr>
@@ -29,7 +30,6 @@
             </tr>
           </tbody>
         </table>
-        <button  class="btn btn-secondary mr-2" [routerLink]="['/user/dash',bookingmodel.userNo]">Back to Dashboard</button>
       </div>
     </div>
     
