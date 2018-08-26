@@ -29,6 +29,7 @@ import { AllFlightsComponent } from './user/all-flights.component';
 import { TicketDetailsComponent } from './user/ticket-details.component';
 import { ResetPasswordComponent } from './reset-password.component';
 import { ResetComponent } from './reset.component';
+import { PaymentStatusComponent } from './user/payment-status.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { ResetComponent } from './reset.component';
     AllFlightsComponent,
     TicketDetailsComponent,
     ResetPasswordComponent,
-    ResetComponent
+    ResetComponent,
+    PaymentStatusComponent
   ],
   imports: [
     BrowserModule,

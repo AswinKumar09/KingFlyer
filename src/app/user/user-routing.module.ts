@@ -10,6 +10,7 @@ import { AllFlightsComponent } from "./all-flights.component";
 import { BookingHistoryComponent } from "./booking-history.component";
 import { TicketDetailsComponent } from "./ticket-details.component";
 import { PaymentComponent } from "./payment.component";
+import { PaymentStatusComponent } from "./payment-status.component";
 const routes: Routes = [{
   path: "user",
     canActivate:[AuthenticationGuard],
@@ -22,8 +23,10 @@ const routes: Routes = [{
   {path:"dash/:id", component:UserdashboardComponent},
   {path:"payment/:uid/:id/:email", component:PaymentComponent},
   {path:"allFlights/:id", component:AllFlightsComponent},
-  {path:"manageaccount/:id", component:ManageAccountComponent}]}
-];
+  {path:"manageaccount/:id", component:ManageAccountComponent},
+  {path:"payment-status/:id", component:PaymentStatusComponent}
+]}
+]; 
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

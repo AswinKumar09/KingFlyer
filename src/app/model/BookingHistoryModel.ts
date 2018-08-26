@@ -5,13 +5,14 @@ export class Bookinghistorymodel {
     bookingId:string;
     flightNo:number;
     flightName:string;
-    userNo:string;
+    userNo:number;
     departure:string;
     arrival: string;
     day:string;
     passengers:PassengerModel[];
+    amount:number;
 
-   constructor(bookingId,flightNo, flightName, userNo, departure, arrival, day, passengers)
+   constructor(bookingId,flightNo, flightName, userNo, departure, arrival, day, passengers,amount)
    {
        this.bookingId = bookingId;
        this.flightNo = flightNo;
@@ -21,5 +22,6 @@ export class Bookinghistorymodel {
        this.day = day;
        this.passengers = passengers;
        this.flightName = flightName;
+       this.amount = amount;
    }
 }

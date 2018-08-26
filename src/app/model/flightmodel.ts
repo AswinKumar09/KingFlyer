@@ -7,10 +7,10 @@ export class Flightmodel {
     departure:string;
     arrival:string;
     flightCatg:string;
-    availDays:string[];
     date:string;
+    amount:number;
 
-   constructor(flightNo, flightName, source, destination, departure, arrival, flightCatg, availDays)
+   constructor(flightNo, flightName, source, destination, departure, arrival, flightCatg, amount)
    {
        this.flightNo = flightNo;
        this.flightName = flightName;
@@ -19,6 +19,6 @@ export class Flightmodel {
        this.departure = departure;
        this.arrival = arrival;
        this.flightCatg = flightCatg;
-       this.availDays = availDays;
+       this.amount = amount;
    }
 }

@@ -18,7 +18,6 @@ import { ResetPasswordComponent } from "./reset-password.component";
 import { bookingHistoryService } from './services/bookingHistoryService';
 import { ResetComponent } from "./reset.component";
 
-
 const routes: Routes = [
   {path:"home", component:HomeComponent}, 
   {path:"", redirectTo:"/home", pathMatch:"full"},
@@ -34,7 +33,7 @@ const routes: Routes = [
   {path:"payment",component:PaymentComponent},
   {path:"signin",component:UserlogginComponent},
   {path:"signup",component:UsersignupComponent},
-  {path:"adminlogin",component:AdminloginComponent},
+  {path:"admin",component:AdminloginComponent},
   {path:"admindashboard",component:AdminDashboardComponent},
   {path:"upcomingtrips",component:UpcomingTripsComponent},
   {path:"bookinghistory",component:BookingHistoryComponent}

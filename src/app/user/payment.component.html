@@ -44,11 +44,16 @@
 
                    </datalist>
                    <input list="banks" type="text">
+<<<<<<< HEAD
                  <button type="button" class="btn btn-outline-primary mr-2" (click) = "mail()"
+=======
+                   <i class = "fa fa-spinner" id = "i" style = "display: none"></i>
+                 <button type="button" class="btn btn-outline-primary mr-2" (click)="mail()"
+>>>>>>> 6b69563f6cd1ff17e36f332ceae37db2a09e3556
                         >
                        Pay
                      </button>
-                     <button type="button" class="btn btn-outline-warning mr-2" [routerLink]="['../home']">
+                     <button type="button" class="btn btn-outline-warning mr-2" >
                      Cancel </button>
            </div>
          </div>
@@ -112,7 +117,7 @@
                          placeholder="Card Holder's Name"
                            class="form-control"   />
                        </div>
-                     <button type="button" class="btn btn-outline-primary mr-2" [routerLink]="['confirm']"
+                     <button type="button" class="btn btn-outline-primary mr-2" (click) = "mail()"
                         >
                        Pay
                      </button>
@@ -191,17 +196,17 @@
                          placeholder="Card Holder's Name"
                            class="form-control"   />
                        </div>
-                     <button type="button" class="btn btn-outline-primary mr-2" [routerLink]="['confirm']"
+                     <button type="button" class="btn btn-outline-primary mr-2" (click) = "mail()"
                         >
                        Pay
                      </button>
-                     <button type="button" class="btn btn-outline-warning mr-2" [routerLink]="['../home']">
+                     <button type="button" class="btn btn-outline-warning mr-2" [routerLink]="['/home']">
                      Cancel </button>
                      
-                     <button (click) = "mail()">mail</button>
+                     
                  </form>
+                 
                  </div>  
-
                </div>
              </div>
          
