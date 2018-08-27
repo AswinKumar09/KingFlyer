@@ -13,7 +13,7 @@ import { Usermodel } from "../model/userModel";
   isLoggedIn: boolean = false;
   redirectUrl: string = ""; 
   model: LoginModel; 
-  url:string="http://localhost:2020/UserBackendService/api/user/email";
+  url:string="http://localhost:2023/UserBackendService/api/user/email";
   userModel : Usermodel;
    constructor(private service:UserService,private http:HttpClient) { 
     this.model = new LoginModel("", "");

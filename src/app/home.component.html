@@ -18,10 +18,7 @@
           
           <form class="form-inline justify-content-center">
             <div class="input-group my-1">
-               
-              <select *ngFor = "let i of list">
-                <option>{{i}}</option>
-              </select>
+              
               <datalist id = "d1" > 
                       <option *ngFor="let item of flightList" (click)="model=item">{{item.source}}</option>
               </datalist>

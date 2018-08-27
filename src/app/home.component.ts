@@ -24,7 +24,6 @@ export class HomeComponent implements OnInit {
       console.log(latest_date);
   }
   model : Flightmodel;
-  
   flightList : any;
   d:string;
   constructor(private service:FlightService, private router:Router,public datepipe: DatePipe) {
