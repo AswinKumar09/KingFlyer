@@ -15,7 +15,7 @@ export class AdminService {
   constructor(private http: HttpClient) { 
     //this.productList = products;
   }
-  userUrl: string = "http://localhost:2020/AdminBackendService"
+  userUrl: string = "http://localhost:2023/AdminBackendService"
   validateLogin(item:LoginModel) {
       return this.http.get(this.userUrl + "/validateAdmin/" + item.email + "/" + item.password);
   }
