@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { ActivatedRoute, ParamMap } from "@angular/router";
+
+import { DatePipe } from '@angular/common';
 import { PassengerModel } from "../model/PassengerModel";
 import { UserService } from "../services/UserService";
 import { Bookinghistorymodel } from "../model/BookingHistoryModel";
@@ -14,9 +16,11 @@ import { Usermodel } from '../model/userModel';
   templateUrl: './booking-ticket.component.html',
   styleUrls: ['./booking-ticket.component.css']
 })
+
 export class BookingTicketComponent implements OnInit {
 
   constructor(public uService:UserService,
+    public datepipe: DatePipe,
     public fService:FlightService,
     public route:ActivatedRoute,public bService:bookingHistoryService,public router:Router) { }
   passengers:PassengerModel[] = [];
@@ -28,6 +32,7 @@ export class BookingTicketComponent implements OnInit {
   userid:string;
   flightNo:string;
   date:string;
+  today:number = Date.now();
   ngOnInit() {
     this.refresh();
     this.userid=this.route.snapshot.paramMap.get("userid");
@@ -35,6 +40,9 @@ export class BookingTicketComponent implements OnInit {
     this.date=this.route.snapshot.paramMap.get("date");
     this.bookingModel = new Bookinghistorymodel("","","","","","","","","");
     this.bookingModel.day = this.date;
+    let latest_date =this.datepipe.transform(this.today, 'yyyy-MM-dd');
+    document.getElementById("date").setAttribute("min",latest_date);
+    console.log(latest_date);
     this.fService.getDetails(this.flightNo).subscribe((response) => {
       this.flightModel = response as any;
   });
