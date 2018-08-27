@@ -4,7 +4,6 @@ import { FormsModule } from "@angular/forms";
 
 import { AdminRoutingModule } from './admin-routing.module';
 
-import { AdminactivityComponent } from './adminactivity.component';
 import { CreateflightComponent } from './createflight.component';
 
 @NgModule({
@@ -13,6 +12,6 @@ import { CreateflightComponent } from './createflight.component';
     AdminRoutingModule,
     FormsModule
   ],
-  declarations: [AdminactivityComponent, CreateflightComponent]
+  declarations: [CreateflightComponent]
 })
 export class AdminModule { }
