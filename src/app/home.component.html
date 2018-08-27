@@ -33,7 +33,7 @@
                  </datalist>
              
               <input type="text" list="d2"  name="destination" class="form-control mr-3 my-1 form-control-lg" placeholder="To" [(ngModel)] ="model.destination"> 
-              <input type="date" class="form-control mr-3 my-1 form-control-lg" placeholder="Date" name = "d" value = "{{d | date:'dd/MM/yyyy'}}" [(ngModel)]="model.date"/>
+              <input type="date" class="form-control mr-3 my-1 form-control-lg" placeholder="Date" name = "d" value = "{{d | date:'dd/MM/yyyy'}}" id = "date" [(ngModel)]="model.date"/>
             </div> 
               <a class="btn ml-3 text-white btn-secondary bg-gradient btn-lg" [routerLink]="['/search', model.source, model.destination,model.date]">Search </a> 
           </form>
