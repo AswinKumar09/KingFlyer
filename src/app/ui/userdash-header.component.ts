@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ParamMap } from "@angular/router";
 import { Router } from "@angular/router";
+import { Usermodel } from "../model/userModel";
+import { UserService } from "../services/UserService";
 @Component({
   selector: 'app-userdash-header',
   templateUrl: './userdash-header.component.html',
@@ -8,12 +10,17 @@ import { Router } from "@angular/router";
 })
 export class UserdashHeaderComponent implements OnInit {
 
-  constructor(private route:ActivatedRoute, private router:Router) { }
+  umodel : Usermodel;
+  id:string;
+  constructor(private route:ActivatedRoute, private router:Router,
+  private service:UserService) { }
 
-  id:any;
+  
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get("id");
-    
+    this.service.getPass(this.id).subscribe((response) => {
+      this.umodel = response as any;
+    })
   }
   submit() {
     this.router.navigate(["/allFlights/"+this.id]);

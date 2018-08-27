@@ -27,7 +27,7 @@ export class ManageAccountComponent implements OnInit {
     this.service.create(this.umodel).subscribe({
       complete: () => {
         console.log("completed");
-        this.router.navigate(["/user/dash/"+this.umodel.id]);
+        this.router.navigate(["/user/dash/"+this.umodel.email]);
       }
     });
   }

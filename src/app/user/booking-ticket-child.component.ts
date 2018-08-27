@@ -10,8 +10,7 @@ export class BookingTicketChildComponent implements OnInit {
 
   @Input() model : PassengerModel;
   @Output() createEvent: EventEmitter<any> = new EventEmitter<any>();
-  @Output() updateEvent: EventEmitter<any> = new EventEmitter<any>();
-  @Output() deleteEvent: EventEmitter<any> = new EventEmitter<any>();
+  
   constructor() { }
 
   ngOnInit() {

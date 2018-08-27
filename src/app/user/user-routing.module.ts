@@ -26,7 +26,7 @@ const routes: Routes = [{
   {path:"manageaccount/:id", component:ManageAccountComponent},
   {path:"payment-status/:id", component:PaymentStatusComponent}
 ]}
-];
+]; 
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

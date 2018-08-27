@@ -19,12 +19,20 @@ export class UsersignupComponent implements OnInit {
   }
   
   submit() {
+    if(this.usermodel.email=="") {
+      document.getElementById("email").setAttribute("style","border:3px solid red");
+  }
+  else if(this.usermodel.password=="") {
+    document.getElementById("password").setAttribute("style","border:3px solid red");
+  }
+  else {
     this.service.create(this.usermodel).subscribe({
       complete:() => {
         console.log("completed");
         this.router.navigate(["/signin"]);
       }
     });
+  }
   }
 
 }
