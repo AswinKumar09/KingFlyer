@@ -13,7 +13,13 @@ export class FlightService {
   constructor(private http: HttpClient) { 
     //this.productList = products;
   }
-  flightUrl: string = "http://54.255.163.0:9010/FlightBackendService";
+  flightUrl: string = "http://localhost:9010/FlightBackendService";
+
+  getDest(source:string) {
+    let url = this.flightUrl + "/api/flight/dest/" + source;
+    return this.http.get(url);
+    //return this.productList;
+  }
   getAll() {
     let url = this.flightUrl + "/api/flight";
     return this.http.get(url);

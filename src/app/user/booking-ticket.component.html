@@ -1,21 +1,27 @@
 .
 .
-<div class="row">
+<div class="column">
 
-<div class="col-5" style="padding-left: 35px">
-   <div class="card text-white p-5  bg-primary w-60 h-20">
-          <h1 style="color: black; text-align: center">Flight Detail</h1>      <div class = "container">
+<div style="padding: 35px">
+   <div class="card text-white  bg-primary w-60 h-20">
+          <h1 style="color: white; text-align: center">Flight Details</h1>      <div class = "container">
          <div class = "row">
            <div class = "col-md-12">
            <div>
-           <table>
-           <tr> <td><p style="color: black"><b> FlightName :</b></p> </td><td><input  [(ngModel)]="flightModel.flightName" readonly/></td> </tr>
+           <table style="text-align: center;border-spacing: 10px;">
+           <tr style="padding: 1px"><td><p style="color: black"><b> FlightName :</b></p></td>
+            <td><p style="color:black"><b>Source :</b> </p></td>
+            <td><p style="color:black"><b>Destination :</b></p></td>
+            <td><p style="color:black"><b>Date :</b></p></td></tr>
+            <tr>
+            
+            <td> <input  [(ngModel)]="flightModel.flightName" readonly/></td>
+          
            
+           <td><input  [(ngModel)]="flightModel.source" readonly/></td>   
            
-           <tr><td><p style="color:black"><b>Source :</b> </p></td><td><input  [(ngModel)]="flightModel.source" readonly/></td></tr>    
-           
-             <tr><td><p style="color:black"><b>Destination :</b></p></td><td> <input  [(ngModel)]="flightModel.destination" readonly/></td></tr>
-             <tr><td><p style="color:black"><b>Date :</b></p></td><td> <input  type = "date" [(ngModel)]="bookingModel.day" id = "date" value = "{{date}}"/></td></tr>
+             <td> <input  [(ngModel)]="flightModel.destination" readonly/></td>
+             <td> <input type = "date" [(ngModel)]="bookingModel.day" id = "date" value = "{{date}}"/></td></tr>
            
          </table>
        </div>

@@ -58,8 +58,25 @@
   *::before,
   *::after {
     box-sizing: border-box; }
-  
+
+  app-root {
+    height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+
   html {
+    height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
     font-family: sans-serif;
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;
@@ -74,6 +91,13 @@
     display: block; }
   
   body {
+    height: 500px; 
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
     margin: 0;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     font-size: 1rem;
@@ -4141,7 +4165,7 @@
     vertical-align: text-top !important; }
   
   .bg-primary {
-    background-color: #12bbad !important; }
+    background-color: rgba(46, 4, 11, 0.3); }
   
   a.bg-primary:hover, a.bg-primary:focus,
   button.bg-primary:hover,

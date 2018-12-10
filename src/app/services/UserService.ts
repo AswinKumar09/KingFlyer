@@ -13,7 +13,7 @@ export class UserService {
   constructor(private http: HttpClient) { 
     //this.productList = products;
   }
-  userUrl: string = "http://54.255.163.0:9010/UserBackendService"
+  userUrl: string = "http://localhost:9010/UserBackendService"
   getAll() {
     let url = this.userUrl + "/api/user";
     return this.http.get(url);

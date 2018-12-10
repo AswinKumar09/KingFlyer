@@ -13,7 +13,8 @@ export class bookingHistoryService {
   constructor(private http: HttpClient) { 
     //this.productList = products;
   }
-  bookUrl: string = "http://54.255.163.0:9010/BookingBackendService";
+  bookUrl: string = "http://localhost:9010/BookingBackendService";
+  
   create(item: Bookinghistorymodel) {
     //this.productList.push(item);
     let url = this.bookUrl + "/api/booking" ;
