@@ -2,31 +2,33 @@
 .
 <div class="column">
 
-<div style="padding: 35px">
+<div style="padding: 35px; text-align: center">
    <div class="card text-white  bg-primary w-60 h-20">
-          <h1 style="color: white; text-align: center">Flight Details</h1>      <div class = "container">
-         <div class = "row">
-           <div class = "col-md-12">
-           <div>
-           <table style="text-align: center;border-spacing: 10px;">
-           <tr style="padding: 1px"><td><p style="color: black"><b> FlightName :</b></p></td>
-            <td><p style="color:black"><b>Source :</b> </p></td>
-            <td><p style="color:black"><b>Destination :</b></p></td>
-            <td><p style="color:black"><b>Date :</b></p></td></tr>
+          <h1 style="color: white; text-align: center">Flight Details</h1>     
+          <div class = "container">
+
+          <table class="table bg-primary table-striped">
+            <tbody>
+            <tr style="padding: 1px">
+              <td><p style="color:white;font-size: 20px"><b>FlightName :</b></p></td>
+              <td><p style="color:white;font-size: 20px"><b>Source :</b> </p></td>
+              <td><p style="color:white;font-size: 20px"><b>Destination :</b></p></td>
+              
+            </tr>
             <tr>
-            
-            <td> <input  [(ngModel)]="flightModel.flightName" readonly/></td>
-          
-           
-           <td><input  [(ngModel)]="flightModel.source" readonly/></td>   
-           
-             <td> <input  [(ngModel)]="flightModel.destination" readonly/></td>
-             <td> <input type = "date" [(ngModel)]="bookingModel.day" id = "date" value = "{{date}}"/></td></tr>
-           
-         </table>
-       </div>
-         </div>
-       </div>
+              <td><input class="form-control" [(ngModel)]="flightModel.flightName" readonly/></td>
+              <td><input  [(ngModel)]="flightModel.source" readonly/></td>   
+              <td><input  [(ngModel)]="flightModel.destination" readonly/></td>
+              
+            </tr>
+            <tr>
+                <td colspan="3"><p style="color:white;font-size: 40px"><b>Date :</b></p></td>
+            </tr>
+            <tr>
+                <td colspan="3"><input type = "date" [(ngModel)]="bookingModel.day" id = "date" value = "{{date}}"/></td>
+            </tr>
+          </tbody>
+          </table>
        </div>
      </div>
      </div>
@@ -62,23 +64,25 @@
        
            </div>
            </div> -->
-
-    <div class="col-3">
+           <div class="row">
+    <div class="col-6">
       
       
                <app-booking-ticket-child [model]="selectedModel"
          (createEvent)="create($event)"></app-booking-ticket-child>
          <div class="text-center ">
-         <button type = "button" class = "btn btn-warning m-1 " (click)="addNew()"><b>Add New</b></button>
+         <!-- <button type = "button" class = "btn btn-warning m-1 " (click)="addNew()"><b>Add New</b></button> -->
          </div>
      </div>
-
-
-     <div class="col-4" style="padding-right: 20px">
+     <div class="col-6" style="padding-right: 20px">
+     <div class="card text-white bg-primary w-60 h-20">
+     
          
-         <h1>Booking Preview</h1>
+         <h1 style="color:white">Booking Preview</h1>
            <table class="table bg-primary table-striped">
-               <thead><tr><th><p style="color:black">Passenger Name</p></th><th><p style="color:black">Age</p></th><th><p style="color:black">Gender</p></th></tr></thead>
+               <thead><tr><th><p style="color:white">Passenger Name</p></th>
+                <th><p style="color:white">Age</p></th>
+                <th><p style="color:white">Gender</p></th></tr></thead>
                <tbody>
                  <tr *ngFor="let item of passengers">
                    <td>{{item.name}}</td>
@@ -93,9 +97,10 @@
                  <button class = "btn btn-primary col-md-2" (click) = "submit()">Submit</button>
                </div>
            </div> 
-         
+          </div>
          </div>
 
+        </div>
 
 
   
